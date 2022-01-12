@@ -30,7 +30,7 @@ LinkedLogo.defaultProps = {
 
 export default function Layout({ children, home }) {
   const router = useRouter()
-  console.log(router.asPath)
+
   return (
     <div>
       <Head>
