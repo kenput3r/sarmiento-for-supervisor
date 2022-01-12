@@ -10,6 +10,7 @@ const LinkedLogo = React.forwardRef(({ onClick, href }, ref) => (
   <a href={href} onClick={onClick} ref={ref}>
     <Image
       priority
+      placeholder="blur"
       src={logo}
       alt="Vicente Sarmiento For OC Supervisor"
       width={480}
@@ -41,7 +42,7 @@ export default function Layout({ children, home }) {
         />
         <meta
           property="og:image"
-          content={logo}
+          content="/sarmiento-headshot-watermarked.jpg"
         />
         <meta name="og:title" content="Sarmiento For Orange County Supervisor" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -52,6 +53,7 @@ export default function Layout({ children, home }) {
           <h1 className="text-center mt-4 px-2">
             <Image
               priority
+              placeholder="blur"
               src={logo}
               alt="Vicente Sarmiento For OC Supervisor"
               width={480}

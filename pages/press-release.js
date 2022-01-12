@@ -8,6 +8,12 @@ export default function PressRelease() {
       <Head>
         <title>Press Release - Campaign Announcement | Sarmiento for OC Supervisor</title>
         <meta name="description" content="Vicente Sarmiento is running for Orange County Supervisor" />
+        <meta
+          property="og:image"
+          content="/sarmiento-headshot-watermarked.jpg"
+        />
+        <meta name="og:title" content="Sarmiento For Orange County Supervisor" />
+        <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" href="/favicon.png" />
       </Head>
       <div className="max-w-screen-md mx-auto mt-4">
