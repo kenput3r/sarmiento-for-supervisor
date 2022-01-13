@@ -32,11 +32,11 @@ export default function PressRelease() {
 
         <p className="mt-4">Sarmiento has over 14 years of experience on the Santa Ana City Council.  He was first appointed in January 2007 and was subsequently re-elected in 2008, 2012, and 2016.  In 2020 he was elected as only the second Latino Mayor in Santa Ana’s 152-year history. </p>
 
-        <p className="mt-4">If successfully elected as Supervisor, Sarmiento would be only the 3rd Latino Supervisor in County History – and the first Santa Ana official to serve on the Orange County Board of Supervisors in 74 years.  The last was former Santa Ana Mayor Fred C. Rowland (1941–1948) who resigned as Mayor on January 6, 1941 after being elected to the County Board of Supervisors in the November 1940 elections.</p>
+        <p className="mt-4">As Supervisor, Sarmiento would be only the 3rd Latino Supervisor in County History – and the first Santa Ana official to serve on the Orange County Board of Supervisors in 74 years.</p>
 
         <p className="mt-4">Mayor Sarmiento currently serves as a Member of the Orange County Transportation Authority (OCTA) Board of Directors and served as President and a Member of the Orange County Water District Board of Directors for 6 years.</p>
 
-        <p className="mt-4">Raised in Santa Ana and Central Orange County, Sarmiento attended local public schools, graduated from the University of California, Berkeley with a Bachelor of Arts in Economics, and earned his Law Degree from the University of California, Los Angeles.  He proudly returned home to Santa Ana with his wife Eva to raise their family, head up his own Santa Ana-based Financial Law practice, and enter public service to assist his hometown of Santa Ana become the thriving and vibrant city it is today.</p>
+        <p className="mt-4">Raised in Santa Ana and Central Orange County, Sarmiento attended local public schools, graduated from the University of California, Berkeley with a Bachelor of Arts in Economics, and earned his Law Degree from the University of California, Los Angeles.  He proudly returned home to Santa Ana with his wife Eva to raise their family, start his own Santa Ana-based Financial Law practice, and enter public service to assist his hometown of Santa Ana become the thriving and vibrant city it is today.</p>
       </div>
     </Layout>
   )
