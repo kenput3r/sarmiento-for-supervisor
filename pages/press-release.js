@@ -1,30 +1,11 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Head from 'next/head'
 import Layout from '../components/layout'
-import { PressReleaseEnglish, PressReleaseSpanish } from '../components/pressRelease'
 import { useAppContext } from '../components/context'
-
-function LanguageToggle({ language, setLanguage }) {
-  let toggleTo = ''
-  let buttonText = ''
-  if (language === 'english') {
-    toggleTo = 'spanish'
-    buttonText = 'en español'
-  } else {
-    toggleTo = 'english'
-    buttonText = 'english'
-  }
-
-  return <button type="button" className="underline text-blue-500 p-2 uppercase" onClick={() => setLanguage(toggleTo)}>{buttonText}</button>
-}
-LanguageToggle.propTypes = {
-  language: PropTypes.string.isRequired,
-  setLanguage: PropTypes.func.isRequired,
-}
+import { pressReleaseText as text } from '../components/text'
 
 export default function PressRelease() {
-  const { language, setLanguage } = useAppContext()
+  const { language } = useAppContext()
 
   return (
     <Layout>
@@ -39,13 +20,22 @@ export default function PressRelease() {
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <p className="text-center"><LanguageToggle language={language} setLanguage={setLanguage} /></p>
-      {language === 'english' ? (
-        <PressReleaseEnglish />
-      ) : (
-        <PressReleaseSpanish />
-      )}
 
+      <div className="max-w-screen-md mx-auto mt-4">
+        <h1 className="text-center font-bold text-xl">{text.h1[language]}</h1>
+        <p className="mt-2 font-bold italic text-center">{text.h2[language]}</p>
+
+        {text.paragraphs.map((paragraph) => (
+          <p
+            className="mt-4"
+            key={paragraph[language].substring(0, 4)
+            + paragraph[language].substring(paragraph[language].length - 4, paragraph.length)}
+          >
+            {paragraph[language]}
+          </p>
+        ))}
+
+      </div>
     </Layout>
   )
 }

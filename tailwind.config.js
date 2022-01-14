@@ -26,6 +26,7 @@ module.exports = {
     screens: {
       'x-down': { max: '375px' },
       phones: { max: '500px' },
+      notPhones: '500px',
       ...defaultTheme.screens,
     },
   },

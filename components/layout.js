@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import Navigation from './navigation'
 import logo from '../images/for-supervisor-primary_blue.png'
 
 const LinkedLogo = React.forwardRef(({ onClick, href }, ref) => (
@@ -30,8 +30,6 @@ LinkedLogo.defaultProps = {
 }
 
 export default function Layout({ children, home }) {
-  const router = useRouter()
-
   return (
     <div>
       <Head>
@@ -69,22 +67,7 @@ export default function Layout({ children, home }) {
         )}
       </header>
 
-      <nav className="mt-4 border-y-2 border-blue-500 bg-blue-500">
-        <ul className="text-orange-500 font-bold uppercase flex flex-row flex-wrap justify-center">
-          <li className={router.asPath === '/' ? 'p-2 underline' : 'p-2'}>
-            <Link href="/">Home</Link>
-          </li>
-          <li className={router.asPath === '/press-release' ? 'p-2 underline' : 'p-2'}>
-            <Link href="/press-release">Press Release</Link>
-          </li>
-          <li className={router.asPath === '/contact' ? 'p-2 underline' : 'p-2'}>
-            <Link href="/contact">Contact</Link>
-          </li>
-          <li className="p-2 x-down:p-0 x-down:px-2 x-down:pb-2">
-            <a href="https://www.efundraisingconnections.com/c/VinceSarmiento/" target="_blank" rel="noreferrer">Donate</a>
-          </li>
-        </ul>
-      </nav>
+      <Navigation />
 
       <main className="px-2">{children}</main>
 
