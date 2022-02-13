@@ -1,21 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import Navigation from './navigation'
-import logo from '../images/for-supervisor-primary_blue.png'
+import Navigation from './Navigation/Navigation'
+import NavigationDrawer from './Navigation/NavigationDrawer'
+import logo from '../images/sarmiento-for-oc-supervisor.svg'
 
 const LinkedLogo = React.forwardRef(({ onClick, href }, ref) => (
   <a href={href} onClick={onClick} ref={ref}>
-    <Image
-      priority
-      placeholder="blur"
-      src={logo}
-      alt="Vicente Sarmiento For OC Supervisor"
-      width={480}
-      height={145.66}
-    />
+    <Image src={logo} alt="Vicente Sarmiento For OC Supervisor" />
   </a>
 ))
 
@@ -30,6 +24,7 @@ LinkedLogo.defaultProps = {
 }
 
 export default function Layout({ children, home }) {
+  const [showDrawer, setShowDrawer] = useState(false)
   return (
     <div>
       <Head>
@@ -46,30 +41,24 @@ export default function Layout({ children, home }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
-      <header>
+      <header className="flex flex-row bg-blue-500 py-3.5 px-3.5 justify-between items-center fixed top-0 w-full z-10 md:px-8">
         {home ? (
-          <h1 className="text-center mt-4 px-2">
-            <Image
-              priority
-              placeholder="blur"
-              src={logo}
-              alt="Vicente Sarmiento For OC Supervisor"
-              width={480}
-              height={145.66}
-            />
+          <h1 className="flex-1 md:flex-auto">
+            <Image src={logo} alt="Vicente Sarmiento For OC Supervisor" />
           </h1>
         ) : (
-          <div className="text-center mt-4 px-2 hover:cursor-pointer">
+          <div className="hover:cursor-pointer flex-1 md:flex-auto">
             <Link href="/" passHref className="hover:cursor-pointer">
               <LinkedLogo />
             </Link>
           </div>
         )}
+        <Navigation showDrawer={showDrawer} setShowDrawer={setShowDrawer} />
       </header>
 
-      <Navigation />
+      <NavigationDrawer showDrawer={showDrawer} />
 
-      <main className="px-2">{children}</main>
+      <main className="px-2 mt-[99px]">{children}</main>
 
       <footer className="text-center mt-4 px-2">
         Paid for by Sarmiento for Supervisor 2022

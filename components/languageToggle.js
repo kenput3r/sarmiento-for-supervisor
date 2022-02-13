@@ -1,7 +1,7 @@
 import React from 'react'
 import { useAppContext } from './context'
 
-export default function LanguageToggle() {
+export default function LanguageToggle(classes) {
   const { language, setLanguage } = useAppContext()
   let toggleTo = ''
   let buttonText = ''
@@ -13,5 +13,5 @@ export default function LanguageToggle() {
     buttonText = 'english'
   }
 
-  return <button type="button" className="font-bold text-orange-500 uppercase" onClick={() => setLanguage(toggleTo)}>{buttonText}</button>
+  return <button type="button" className={`font-bold text-orange-500 uppercase ${classes}`} onClick={() => setLanguage(toggleTo)}>{buttonText}</button>
 }
