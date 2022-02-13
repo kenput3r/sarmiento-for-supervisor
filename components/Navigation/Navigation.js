@@ -38,27 +38,27 @@ export default function Navigation({ showDrawer, setShowDrawer }) {
             }
             if (item.path.charAt(0) === '/') {
               return (
-                <>
-                  <li className={toggleClasses} key="language-toggle">
+                <React.Fragment key={item.path}>
+                  <li className={toggleClasses}>
                     <LanguageToggle classes={anchorClasses} />
                   </li>
-                  <li className={itemClasses} key={item.path}>
+                  <li className={itemClasses}>
                     <Link href={item.path}>
                       <a className={`${router.pathname === item.path ? 'underline' : ''} ${item.styles} ${anchorClasses}`}>{item.text[language]}</a>
                     </Link>
                   </li>
-                </>
+                </React.Fragment>
               )
             }
             return (
-              <>
-                <li className={toggleClasses} key="language-toggle">
+              <React.Fragment key={item.path}>
+                <li className={toggleClasses}>
                   <LanguageToggle classes={anchorClasses} />
                 </li>
-                <li className={itemClasses} key={item.path}>
+                <li className={itemClasses}>
                   <a className={`${item.styles} ${anchorClasses}`} href={item.path} target="_blank" rel="noreferrer">{item.text[language]}</a>
                 </li>
-              </>
+              </React.Fragment>
             )
           }
           return false
