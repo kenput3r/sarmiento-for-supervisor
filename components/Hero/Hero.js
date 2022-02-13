@@ -21,7 +21,7 @@ export default function Hero() {
         <form className="mx-auto md:w-[612px] lg:w-full">
           <div className="flex flex-row justify-between mb-2">
             <div className="w-6/12 pr-1">
-              <input type="text" id="FirstName" name="LastName" aria-label={contactText.firstName[language]} placeholder={contactText.firstName[language]} className="w-full rounded-md" />
+              <input type="text" id="FirstName" name="FirstName" aria-label={contactText.firstName[language]} placeholder={contactText.firstName[language]} className="w-full rounded-md" />
             </div>
             <div className="w-6/12 pl-1">
               <input type="text" id="LastName" name="LastName" aria-label={contactText.lastName[language]} placeholder={contactText.lastName[language]} className="w-full rounded-md" />
