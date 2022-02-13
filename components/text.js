@@ -92,6 +92,7 @@ export const prioritiesText = {
       english: 'Reduce the number of those experiencing homelessness.',
       spanish: 'Reduce the number of those experiencing homelessness.',
     },
+    link: '',
   },
   publicHealth: {
     english: 'Public Health',
@@ -100,6 +101,7 @@ export const prioritiesText = {
       english: 'Improve the delivery of public health care.',
       spanish: 'Improve the delivery of public health care.',
     },
+    link: '',
   },
   openSpace: {
     english: 'Open Space',
@@ -108,6 +110,7 @@ export const prioritiesText = {
       english: 'Increase park and open space.',
       spanish: 'Increase park and open space.',
     },
+    link: '',
   },
   workingFamilies: {
     english: 'Working Families',
@@ -116,6 +119,7 @@ export const prioritiesText = {
       english: 'Help small businesses and working families.',
       spanish: 'Help small businesses and working families.',
     },
+    link: '',
   },
   transparentGovernment: {
     english: 'Transparent Government',
@@ -124,6 +128,22 @@ export const prioritiesText = {
       english: 'Open and transparent government.',
       spanish: 'Open and transparent government.',
     },
+    link: '',
+  },
+  learnMore: {
+    english: 'Learn More',
+    spanish: 'Learn More',
+  },
+}
+
+export const ctaText = {
+  submit: {
+    english: 'Submit',
+    spanish: 'Enviar',
+  },
+  learnMore: {
+    english: 'Learn More',
+    spanish: 'Learn More',
   },
 }
 
