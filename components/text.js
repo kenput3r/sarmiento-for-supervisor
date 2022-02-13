@@ -80,6 +80,53 @@ export const heroText = {
   },
 }
 
+export const prioritiesText = {
+  title: {
+    english: 'PRIORITIES',
+    spanish: 'PRIORITIES',
+  },
+  reduceHomelessness: {
+    english: 'Reducing Homelessness',
+    spanish: 'Reducing Homelessness',
+    excerpt: {
+      english: 'Reduce the number of those experiencing homelessness.',
+      spanish: 'Reduce the number of those experiencing homelessness.',
+    },
+  },
+  publicHealth: {
+    english: 'Public Health',
+    spanish: 'Public Health',
+    excerpt: {
+      english: 'Improve the delivery of public health care.',
+      spanish: 'Improve the delivery of public health care.',
+    },
+  },
+  openSpace: {
+    english: 'Open Space',
+    spanish: 'Open Space',
+    excerpt: {
+      english: 'Increase park and open space.',
+      spanish: 'Increase park and open space.',
+    },
+  },
+  workingFamilies: {
+    english: 'Working Families',
+    spanish: 'Working Families',
+    excerpt: {
+      english: 'Help small businesses and working families.',
+      spanish: 'Help small businesses and working families.',
+    },
+  },
+  transparentGovernment: {
+    english: 'Transparent Government',
+    spanish: 'Transparent Government',
+    excerpt: {
+      english: 'Open and transparent government.',
+      spanish: 'Open and transparent government.',
+    },
+  },
+}
+
 export const footerText = {}
 
 export const pressReleaseText = {
