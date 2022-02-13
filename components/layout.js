@@ -58,7 +58,7 @@ export default function Layout({ children, home }) {
 
       <NavigationDrawer showDrawer={showDrawer} />
 
-      <main className="px-2 mt-[99px]">{children}</main>
+      <main className="mt-[99px] phones:mt-[73px]">{children}</main>
 
       <footer className="text-center mt-4 px-2">
         Paid for by Sarmiento for Supervisor 2022

@@ -61,6 +61,25 @@ export const contactText = {
   },
 }
 
+export const heroText = {
+  title: {
+    english: "IT'S TIME!",
+    spanish: "IT'S TIME!",
+  },
+  subTitle: {
+    english: 'JOIN OUR CAMPAIGN',
+    spanish: 'JOIN OUR CAMPAIGN',
+  },
+  disclaimer: {
+    english: 'Enter your phone number above to join our team. By clicking “sign up” you agree to receive messages to support Vicente Sarmiento for OC Supervisor. Message & data rates may apply. Text STOP to opt out.',
+    spanish: 'Enter your phone number above to join our team. By clicking “sign up” you agree to receive messages to support Vicente Sarmiento for OC Supervisor. Message & data rates may apply. Text STOP to opt out.',
+  },
+  submit: {
+    english: 'SIGN UP',
+    spanish: 'SIGN UP',
+  },
+}
+
 export const footerText = {}
 
 export const pressReleaseText = {

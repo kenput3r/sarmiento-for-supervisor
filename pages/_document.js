@@ -13,7 +13,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head />
-        <body className="bg-slate-200">
+        <body>
           <Main />
           <NextScript />
         </body>
