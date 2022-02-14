@@ -4,6 +4,7 @@ import Layout from '../components/layout'
 import { useAppContext } from '../components/context'
 import Hero from '../components/Hero/Hero'
 import Priorities from '../components/Priorities/Priorities'
+import Updates from '../components/Updates/Updates'
 
 export default function Home() {
   const { language } = useAppContext()
@@ -21,6 +22,8 @@ export default function Home() {
       <Hero />
 
       <Priorities />
+
+      <Updates />
 
       <section className="max-w-screen-lg mx-auto">
         <div className="relative h-0 mt-4 pb-fluid-video phones:my-8">

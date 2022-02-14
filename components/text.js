@@ -189,3 +189,49 @@ export const pressReleaseText = {
     },
   ],
 }
+
+export const updatesText = {
+  title: {
+    english: 'UPDATES',
+    spanish: 'UPDATES',
+  },
+  readMore: {
+    english: 'Read More',
+    spanish: 'Read More',
+  },
+  updates: [
+    {
+      title: {
+        english: 'Annual Awards Gala: Celebrating Truth and Justice',
+        spanish: 'Annual Awards Gala: Celebrating Truth and Justice',
+      },
+      excerpt: {
+        english: 'The Democratic Party of Orange County’s largest event of the year returns Saturday, October 23 at 5:00 PM. The Democratic Party of Orange County Annual Awards Gala: Celebrating Truth and Justice will be a virtual event...',
+        spanish: 'The Democratic Party of Orange County’s largest event of the year returns Saturday, October 23 at 5:00 PM. The Democratic Party of Orange County Annual Awards Gala: Celebrating Truth and Justice will be a virtual event...',
+      },
+      link: '/',
+    },
+    {
+      title: {
+        english: 'Free COVID-19 Vaccines',
+        spanish: 'Free COVID-19 Vaccines',
+      },
+      excerpt: {
+        english: 'FREE COVID-19 Vaccinations on June 26th! Bring everyone in your family ages 12+ to get vaccinated for FREE at this special pop-up event. You will not be asked for ID or any documentation...',
+        spanish: 'FREE COVID-19 Vaccinations on June 26th! Bring everyone in your family ages 12+ to get vaccinated for FREE at this special pop-up event. You will not be asked for ID or any documentation...',
+      },
+      link: '/',
+    },
+    {
+      title: {
+        english: 'Summer Youth Program',
+        spanish: 'Summer Youth Program',
+      },
+      excerpt: {
+        english: 'New job opportunities for the summer are available for residents of Santa Ana between the ages of 16 – 21...',
+        spanish: 'New job opportunities for the summer are available for residents of Santa Ana between the ages of 16 – 21...',
+      },
+      link: '/',
+    },
+  ],
+}
