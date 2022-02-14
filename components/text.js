@@ -235,3 +235,26 @@ export const updatesText = {
     },
   ],
 }
+
+export const socialText = [
+  {
+    network: 'Facebook',
+    url: '',
+  },
+  {
+    network: 'Instagram',
+    url: '',
+  },
+  {
+    network: 'Twitter',
+    url: '',
+  },
+  {
+    network: 'YouTube',
+    url: '',
+  },
+  {
+    network: 'Email',
+    url: '',
+  },
+]

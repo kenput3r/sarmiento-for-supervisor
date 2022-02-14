@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Navigation from './Navigation/Navigation'
 import NavigationDrawer from './Navigation/NavigationDrawer'
+import Footer from './Footer/Footer'
 import logo from '../images/sarmiento-for-oc-supervisor.svg'
 
 const LinkedLogo = React.forwardRef(({ onClick, href }, ref) => (
@@ -60,11 +61,7 @@ export default function Layout({ children, home }) {
 
       <main className="mt-[99px] phones:mt-[73px]">{children}</main>
 
-      <footer className="text-center mt-4 px-2">
-        Paid for by Sarmiento for Supervisor 2022
-        {' '}
-        <span className="phones:block">(FPPC ID# 1442960)</span>
-      </footer>
+      <Footer />
     </div>
   )
 }
