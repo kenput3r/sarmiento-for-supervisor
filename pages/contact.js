@@ -21,7 +21,7 @@ export default function Contact() {
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <div className="mt-10 sm:mt-4 max-w-lg mx-auto">
+      <div className="mt-10 pt-6 sm:mt-4 max-w-lg mx-auto">
         <div className="md:grid md:grid-cols-2 md:gap-6">
           <div className="md:col-span-2">
             <div className="px-4 sm:px-0">

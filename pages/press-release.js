@@ -21,7 +21,7 @@ export default function PressRelease() {
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <div className="max-w-screen-md mx-auto mt-4">
+      <div className="max-w-screen-md mx-auto mt-4 pt-6">
         <h1 className="text-center font-bold text-xl">{text.h1[language]}</h1>
         <p className="mt-2 font-bold italic text-center">{text.h2[language]}</p>
 
