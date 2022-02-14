@@ -147,7 +147,50 @@ export const ctaText = {
   },
 }
 
-export const footerText = {}
+export const footerText = {
+  email: {
+    english: 'Email Address',
+    spanish: 'Correo Electrónico',
+  },
+  phone: {
+    english: 'Phone Number',
+    spanish: 'Número De Teléfono',
+  },
+  submit: {
+    english: 'Join Us',
+    spanish: 'Enviar',
+  },
+  thanks: {
+    english: 'Thanks',
+    spanish: 'Gracias',
+  },
+  disclaimers: {
+    paidForBy: {
+      english: 'Paid for by Sarmiento for Supervisor 2022 FPPC ID# 1442960',
+      spanish: 'Paid for by Sarmiento for Supervisor 2022 FPPC ID# 1442960',
+    },
+    supportTheCampaign: {
+      english: 'Support our supervisorial campaign to elect Vicente Sarmiento by signing up to volunteer or by making a donation online.',
+      spanish: 'Support our supervisorial campaign to elect Vicente Sarmiento by signing up to volunteer or by making a donation online.',
+    },
+    volunteer: {
+      english: 'volunteer',
+      spanish: 'voluntario',
+    },
+    make: {
+      english: 'or by making a',
+      spanish: 'o haciendo una',
+    },
+    donationOnline: {
+      english: 'donation online',
+      spanish: 'donación en línea',
+    },
+    rightsReserved: {
+      english: 'All rights reserved.',
+      spanish: 'Todos los derechos reservados.',
+    },
+  },
+}
 
 export const pressReleaseText = {
   h1: {

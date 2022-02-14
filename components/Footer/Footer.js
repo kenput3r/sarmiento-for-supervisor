@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import navigationItems from '../Navigation/navigationItems'
 import { useAppContext } from '../context'
-import { socialText } from '../text'
+import { socialText, footerText } from '../text'
 import Facebook from '../../images/facebook.png'
 import Instagram from '../../images/instagram.png'
 import Twitter from '../../images/twitter.png'
@@ -21,11 +21,11 @@ export default function Footer() {
         <div className="flex-1 mb-6 w-6/12 pr-3 under-md:flex-none under-md:w-full under-md:pr-0">
           <form className="w-[375px] mb-6 max-w-full">
             <label className="block" htmlFor="FooterEmailAddress">
-              Email Address
+              {footerText.email[language]}
               <input className="block w-full" type="email" id="FooterEmailAddress" name="email" />
             </label>
             <label className="inline-block w-9/12 pr-6" htmlFor="Phone">
-              Phone Number
+              {footerText.phone[language]}
               <input className="block w-full" type="tel" id="Phone" name="Phone" />
             </label>
             <div className="inline-block w-3/12">
@@ -60,12 +60,11 @@ export default function Footer() {
           </ul>
 
           <p className="text-right mb-6 under-md:text-center">
-            <span className="inline-block border p-3">Paid for by Sarmiento for Supervisor 2022 FPPC ID# 1442960</span>
+            <span className="inline-block border p-3">{footerText.disclaimers.paidForBy[language]}</span>
           </p>
 
           <p className="text-right mb-6 ml-auto w-96 max-w-full under-md:text-center">
-            Support our supervisorial campaign to elect Vicente Sarmiento
-            by signing up to volunteer or by making a donation online.
+            {footerText.disclaimers.supportTheCampaign[language]}
           </p>
 
           <p className="text-right under-md:text-center">
