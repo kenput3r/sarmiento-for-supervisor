@@ -14,16 +14,11 @@ async function checkForContact(email) {
       headers,
     })
 
-    console.log(response.data)
-
     if (response.data.results.length > 0) {
-      console.log(`Contact Exists: ${response.data.results[0].id}`)
       return { exists: true, data: response.data }
     }
-    console.log('Contact Does Not Exist')
     return { exists: false }
   } catch (e) {
-    console.error(e.message)
     throw (new Error({ error: e.message }))
   }
 }
@@ -57,7 +52,6 @@ async function createContact(contact) {
 
     return response
   } catch (e) {
-    console.error(e.message)
     throw (new Error(e.message))
   }
 }
@@ -81,10 +75,6 @@ async function updateContact(previousInfo, newInfo) {
     first_name: newInfo.fName ? newInfo.fName : prevInfo.first_name,
     last_name: newInfo.lName ? newInfo.lName : prevInfo.last_name,
   }
-
-  console.log('prev', prevInfo)
-  console.log('new', newInfo)
-  console.log('data', data)
 
   return true
 
@@ -115,6 +105,5 @@ export default async function handler(req, res) {
     const updatedContact = await updateContact(previousContact.data, contact)
     res.send(updatedContact)
   }
-  console.log(previousContact)
   res.send({ message: 'nothing updated' })
 }
