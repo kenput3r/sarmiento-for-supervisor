@@ -76,27 +76,24 @@ async function updateContact(previousInfo, newInfo) {
     last_name: newInfo.lName ? newInfo.lName : prevInfo.last_name,
   }
 
-  return true
+  try {
+    const response = await axios(url, {
+      method: 'Put',
+      headers: {
+        Authorization: `Bearer ${process.env.TOKEN}`,
+        'Content-Type': 'application/json',
+      },
+      body: data,
+    })
 
-  // try {
-  //   const response = await axios(url, {
-  //     method: 'Put',
-  //     headers: {
-  //       Authorization: `Bearer ${process.env.TOKEN}`,
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: data,
-  //   })
-
-  //   return response
-  // } catch (e) {
-  //   console.error(e.message)
-  //   throw (new Error(e.message))
-  // }
+    return response
+  } catch (e) {
+    throw (new Error(e.message))
+  }
 }
 
 export default async function handler(req, res) {
-  const contact = { email: 'hey@ken.dev' }
+  const contact = req.body.data
   const previousContact = await checkForContact(contact.email)
   if (!previousContact.exists) {
     const newContact = await createContact(contact)
