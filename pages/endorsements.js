@@ -6,8 +6,6 @@ import thumbsUp from '../images/thumbs-up.svg';
 
 const list = [
   'UFCW Local 324',
-  'OC Supervisor Katrina Foley',
-  'Assemblyman Tom Daly',
   'Santa Ana City Councilmember Johnathan Ryan Hernandez',
   'Santa Ana City Councilmember Jessie Lopez',
   'Santa Ana Unified School District Trustee Carolyn Torres',

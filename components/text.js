@@ -282,22 +282,22 @@ export const updatesText = {
 export const socialText = [
   {
     network: 'Facebook',
-    url: '',
+    url: 'https://www.facebook.com/vicentefsarmiento',
   },
   {
     network: 'Instagram',
-    url: '',
+    url: 'https://www.instagram.com/vicentefsarmiento/',
   },
   {
     network: 'Twitter',
-    url: '',
+    url: 'https://twitter.com/mayor_sarmiento',
   },
   {
     network: 'YouTube',
-    url: '',
+    url: 'https://www.youtube.com/channel/UCzsCsW3YJZwkyVwTuqRe6ew',
   },
   {
     network: 'Email',
-    url: '',
+    url: 'mailto:info@sarmientoforsupervisory.com',
   },
 ]
