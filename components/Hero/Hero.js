@@ -27,8 +27,9 @@ export default function Hero() {
         setFName('')
         setLName('')
       } else {
-        // eslint-disable-next-line no-undef
-        alert('Something went wrong. Please try again later')
+        setEmail('')
+        setFName('')
+        setLName('')
       }
     }
   }

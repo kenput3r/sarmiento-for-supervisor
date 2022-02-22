@@ -22,7 +22,6 @@ export default function Footer() {
 
   const submit = async (e) => {
     e.preventDefault()
-    console.log('clicked')
     if (validateEmail(email) && phone.length >= 10) {
       const data = {
         email,
@@ -33,8 +32,8 @@ export default function Footer() {
         setEmail('')
         setPhone('')
       } else {
-        // eslint-disable-next-line no-undef
-        alert('Something went wrong. Please try again later')
+        setEmail('')
+        setPhone('')
       }
     }
   }
