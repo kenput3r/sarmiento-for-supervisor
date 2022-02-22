@@ -43,6 +43,16 @@ const navigationItems = [
     styles: 'bg-orange-500 text-white rounded-[5px]',
     icon: 'donate',
   },
+  {
+    text: {
+      english: 'Endorsements',
+      spanish: 'Endorsements',
+    },
+    path: '/endorsements',
+    primary: false,
+    secondary: true,
+    icon: 'endorsement',
+  },
 ]
 
 export default navigationItems

@@ -30,10 +30,16 @@ export default function Contact() {
             </div>
           </div>
           <div className="mt-5 md:mt-0 md:col-span-2">
-            <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+            <form
+              className="bg-gray-50"
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+            >
               <input type="hidden" name="form-name" value="contact" />
               <div className="shadow overflow-hidden sm:rounded-md">
-                <div className="px-4 py-5 bg-white sm:p-6">
+                <div className="px-4 py-5 sm:p-6">
                   <div className="grid grid-cols-6 gap-6">
                     <div className="col-span-6 sm:col-span-3">
                       <label htmlFor="first-name" className="block text-sm font-medium text-gray-700">
@@ -169,7 +175,7 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
+                  <div className="px-4 py-5 space-y-6 sm:p-6">
 
                     <div className="mt-4 space-y-4">
                       <div className="flex items-start">

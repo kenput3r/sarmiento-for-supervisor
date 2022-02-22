@@ -64,33 +64,33 @@ export const contactText = {
 export const heroText = {
   title: {
     english: "IT'S TIME!",
-    spanish: "IT'S TIME!",
+    spanish: 'ES HORA!',
   },
   subTitle: {
     english: 'JOIN OUR CAMPAIGN',
-    spanish: 'JOIN OUR CAMPAIGN',
+    spanish: 'ÚNETE A NUESTRA CAMPAÑA',
   },
   disclaimer: {
     english: 'Enter your phone number above to join our team. By clicking “sign up” you agree to receive messages to support Vicente Sarmiento for OC Supervisor. Message & data rates may apply. Text STOP to opt out.',
-    spanish: 'Enter your phone number above to join our team. By clicking “sign up” you agree to receive messages to support Vicente Sarmiento for OC Supervisor. Message & data rates may apply. Text STOP to opt out.',
+    spanish: 'Ingrese su correo electrónico arriba para unirse a nuestro equipo. Eligiendo “suscribirte” asegura que está de acuerdo en recibir mensajes para apoyar a Vicente Sarmiento para OC Supervisor. Usted puede optar por no en cualquier momento. ',
   },
   submit: {
     english: 'SIGN UP',
-    spanish: 'SIGN UP',
+    spanish: 'Suscribirte',
   },
 }
 
 export const prioritiesText = {
   title: {
     english: 'PRIORITIES',
-    spanish: 'PRIORITIES',
+    spanish: 'Prioridades',
   },
   reduceHomelessness: {
     english: 'Reducing Homelessness',
     spanish: 'Reducing Homelessness',
     excerpt: {
       english: 'Reduce the number of those experiencing homelessness.',
-      spanish: 'Reduce the number of those experiencing homelessness.',
+      spanish: 'Reducir el número de personas sin hogar.',
     },
     link: '',
   },
@@ -99,7 +99,7 @@ export const prioritiesText = {
     spanish: 'Public Health',
     excerpt: {
       english: 'Improve the delivery of public health care.',
-      spanish: 'Improve the delivery of public health care.',
+      spanish: 'Mejorar la entrega del cuidado de la salud pública.',
     },
     link: '',
   },
@@ -108,7 +108,7 @@ export const prioritiesText = {
     spanish: 'Open Space',
     excerpt: {
       english: 'Increase park and open space.',
-      spanish: 'Increase park and open space.',
+      spanish: 'Aumentar parques y espacio abierto.',
     },
     link: '',
   },
@@ -117,7 +117,7 @@ export const prioritiesText = {
     spanish: 'Working Families',
     excerpt: {
       english: 'Help small businesses and working families.',
-      spanish: 'Help small businesses and working families.',
+      spanish: 'Ayudar a pequeñas empresas y familias trabajadoras.',
     },
     link: '',
   },
@@ -126,7 +126,7 @@ export const prioritiesText = {
     spanish: 'Transparent Government',
     excerpt: {
       english: 'Open and transparent government.',
-      spanish: 'Open and transparent government.',
+      spanish: 'Gobierno transparente y abierto. ',
     },
     link: '',
   },
@@ -171,7 +171,7 @@ export const footerText = {
     },
     supportTheCampaign: {
       english: 'Support our supervisorial campaign to elect Vicente Sarmiento by signing up to volunteer or by making a donation online.',
-      spanish: 'Support our supervisorial campaign to elect Vicente Sarmiento by signing up to volunteer or by making a donation online.',
+      spanish: 'Apoya nuestra campaña para elegir a nuestro candidato supervisorial Vicente Sarmiento inscribiéndose para ser voluntario o haciendo una donación en línea. ',
     },
     volunteer: {
       english: 'volunteer',
@@ -236,45 +236,45 @@ export const pressReleaseText = {
 export const updatesText = {
   title: {
     english: 'UPDATES',
-    spanish: 'UPDATES',
+    spanish: 'Actualizaciones',
   },
   readMore: {
     english: 'Read More',
-    spanish: 'Read More',
+    spanish: 'Reaccionar mas',
   },
   updates: [
     {
       title: {
-        english: 'Annual Awards Gala: Celebrating Truth and Justice',
-        spanish: 'Annual Awards Gala: Celebrating Truth and Justice',
+        english: 'Orange County Register: SANTA ANA OFFERS FREE DOWNTOWN PARKING TO HELP BUSINESSES HURT BY STREETCAR CONSTRUCTION',
+        spanish: 'Orange County Register: SANTA ANA OFFERS FREE DOWNTOWN PARKING TO HELP BUSINESSES HURT BY STREETCAR CONSTRUCTION',
       },
       excerpt: {
-        english: 'The Democratic Party of Orange County’s largest event of the year returns Saturday, October 23 at 5:00 PM. The Democratic Party of Orange County Annual Awards Gala: Celebrating Truth and Justice will be a virtual event...',
-        spanish: 'The Democratic Party of Orange County’s largest event of the year returns Saturday, October 23 at 5:00 PM. The Democratic Party of Orange County Annual Awards Gala: Celebrating Truth and Justice will be a virtual event...',
+        english: 'I have always supported small businesses and believe our local governments can and should support business where it can. That is why I support free public parking and other actions that will help our merchants keep attracting customers.',
+        spanish: 'I have always supported small businesses and believe our local governments can and should support business where it can. That is why I support free public parking and other actions that will help our merchants keep attracting customers.',
       },
-      link: '/',
+      link: 'https://www.ocregister.com/2022/02/14/santa-ana-offers-free-downtown-parking-to-help-businesses-hurt-by-streetcar-construction/',
     },
     {
       title: {
-        english: 'Free COVID-19 Vaccines',
-        spanish: 'Free COVID-19 Vaccines',
+        english: 'LA OPINION: SANTA ANA MAYOR SEEKS ORANGE COUNTY DISTRIC 2 SUPERVISOR',
+        spanish: 'LA OPINION: SANTA ANA MAYOR SEEKS ORANGE COUNTY DISTRIC 2 SUPERVISOR',
       },
       excerpt: {
-        english: 'FREE COVID-19 Vaccinations on June 26th! Bring everyone in your family ages 12+ to get vaccinated for FREE at this special pop-up event. You will not be asked for ID or any documentation...',
-        spanish: 'FREE COVID-19 Vaccinations on June 26th! Bring everyone in your family ages 12+ to get vaccinated for FREE at this special pop-up event. You will not be asked for ID or any documentation...',
+        english: 'The new District 2 on the board of supervisors needs a voice that will fight for the resources and attention needed to help our residents feel safe, combat the  Covid 19 Pandemic , and reduce homelessness!',
+        spanish: 'The new District 2 on the board of supervisors needs a voice that will fight for the resources and attention needed to help our residents feel safe, combat the  Covid 19 Pandemic , and reduce homelessness!',
       },
-      link: '/',
+      link: 'https://laopinion.com/2022/01/22/alcalde-de-santa-ana-busca-ser-supervisor-del-distrito-2-del-condado-de-orange/',
     },
     {
       title: {
-        english: 'Summer Youth Program',
-        spanish: 'Summer Youth Program',
+        english: 'Orange County Breeze: Santa Ana Mayor Vicente Sarmiento announces candidacy for Orange County Supervisor',
+        spanish: 'Orange County Breeze: Santa Ana Mayor Vicente Sarmiento announces candidacy for Orange County Supervisor',
       },
       excerpt: {
-        english: 'New job opportunities for the summer are available for residents of Santa Ana between the ages of 16 – 21...',
-        spanish: 'New job opportunities for the summer are available for residents of Santa Ana between the ages of 16 – 21...',
+        english: 'I have always fought for what is right for all of my constituents. As the new Supervisor of District 2, I will bring my passion for improvement to the County level and help our residents & businesses continue to have a chance to thrive!',
+        spanish: 'I have always fought for what is right for all of my constituents. As the new Supervisor of District 2, I will bring my passion for improvement to the County level and help our residents & businesses continue to have a chance to thrive!',
       },
-      link: '/',
+      link: 'https://www.oc-breeze.com/2022/01/18/208164_santa-ana-mayor-vicente-sarmiento-announces-candidacy-for-orange-county-supervisor/',
     },
   ],
 }

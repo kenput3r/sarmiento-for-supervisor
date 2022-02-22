@@ -7,28 +7,33 @@ import publicHealth from '../../images/public-health.svg'
 import openSpace from '../../images/open-space.svg'
 import workingFamilies from '../../images/working-families.svg'
 import transparentGovernment from '../../images/transparent-government.svg'
+import reducingHomelessnessSp from '../../images/reducing-homelessness-sp.svg'
+import publicHealthSp from '../../images/public-health-sp.svg'
+import openSpaceSp from '../../images/open-space-sp.svg'
+import workingFamiliesSp from '../../images/working-families-sp.svg'
+import transparentGovernmentSp from '../../images/transparent-government-sp.svg'
 import { prioritiesText } from '../text'
 
 const images = {
   reduceHomelessness: {
     english: reducingHomelessness,
-    spanish: reducingHomelessness,
+    spanish: reducingHomelessnessSp,
   },
   publicHealth: {
     english: publicHealth,
-    spanish: publicHealth,
+    spanish: publicHealthSp,
   },
   openSpace: {
     english: openSpace,
-    spanish: openSpace,
+    spanish: openSpaceSp,
   },
   workingFamilies: {
     english: workingFamilies,
-    spanish: workingFamilies,
+    spanish: workingFamiliesSp,
   },
   transparentGovernment: {
     english: transparentGovernment,
-    spanish: transparentGovernment,
+    spanish: transparentGovernmentSp,
   },
 }
 
@@ -38,7 +43,7 @@ export default function Priorities() {
 
   return (
     <section>
-      <div className="text-[45px] text-orange-500 font-bold text-center">{prioritiesText.title[language]}</div>
+      <div className="text-[45px] text-orange-500 font-bold text-center uppercase">{prioritiesText.title[language]}</div>
       <div className="flex flex-row flex-wrap justify-center max-w-screen-lg mx-auto">
         {prioritiesList.map((priority) => (
           <div className="w-4/12 p-6 phones:min-w-full" key={priority}>

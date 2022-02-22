@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 import { updatesText } from '../text'
 import { useAppContext } from '../context'
 import bg1 from '../../images/update-bg-1.svg'
@@ -22,13 +21,13 @@ export default function Updates() {
               key={update.title[language]}
               style={{ backgroundImage: `url(${backgrounds[i]})` }}
             >
-              <div className="text-blue-500 text-[45px] font-bold leading-[54px] mb-3">
+              <div className="text-blue-500 text-[25px] font-bold leading-[27px] mb-3">
                 {update.title[language]}
               </div>
               <div className="mb-6">{update.excerpt[language]}</div>
               {update.link && (
                 <div className="text-blue-500 font-bold text-2xl">
-                  <Link href={update.link}>{updatesText.readMore[language]}</Link>
+                  <a href={update.link} target="_blank" rel="noreferrer">{updatesText.readMore[language]}</a>
                 </div>
               )}
             </div>

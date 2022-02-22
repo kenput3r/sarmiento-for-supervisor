@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
+import axios from 'axios'
 import navigationItems from '../Navigation/navigationItems'
 import { useAppContext } from '../context'
+import validateEmail from '../../helpers/validation'
 import { socialText, footerText } from '../text'
 import Facebook from '../../images/facebook.png'
 import Instagram from '../../images/instagram.png'
@@ -15,6 +17,27 @@ const icons = {
 
 export default function Footer() {
   const { language } = useAppContext()
+  const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
+
+  const submit = async (e) => {
+    e.preventDefault()
+    console.log('clicked')
+    if (validateEmail(email) && phone.length >= 10) {
+      const data = {
+        email,
+        phone,
+      }
+      const res = await axios.post('/api/email-signup', { data })
+      if (res.status === 200) {
+        setEmail('')
+        setPhone('')
+      } else {
+        // eslint-disable-next-line no-undef
+        alert('Something went wrong. Please try again later')
+      }
+    }
+  }
   return (
     <footer className="p-6 under-md:p-3">
       <div className="flex flex-row flex-wrap">
@@ -22,14 +45,14 @@ export default function Footer() {
           <form className="w-[375px] mb-6 max-w-full">
             <label className="block" htmlFor="FooterEmailAddress">
               {footerText.email[language]}
-              <input className="block w-full" type="email" id="FooterEmailAddress" name="email" />
+              <input className="block w-full" type="email" id="FooterEmailAddress" name="email" onChange={(e) => setEmail(e.target.value)} />
             </label>
             <label className="inline-block w-9/12 pr-6" htmlFor="Phone">
               {footerText.phone[language]}
-              <input className="block w-full" type="tel" id="Phone" name="Phone" />
+              <input className="block w-full" type="tel" id="Phone" name="Phone" onChange={(e) => setPhone(e.target.value)} />
             </label>
             <div className="inline-block w-3/12">
-              <button className="inline-block bg-blue-500 text-white py-2 px-3 border border-solid border-blue-500 w-full" type="button" onClick={() => {}}>Join Us</button>
+              <button className="inline-block bg-blue-500 text-white py-2 px-3 border border-solid border-blue-500 w-full" type="button" onClick={(e) => submit(e)}>Join Us</button>
             </div>
           </form>
 
