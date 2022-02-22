@@ -13,7 +13,6 @@ const list = [
   'Rancho Santiago Community College District Trustee David Crockett',
   'Tustin City Councilmember Letitia Clark',
   'Anaheim City Councilmember Dr. Jose F. Moreno',
-  'Anaheim City Councilmember Avelino Valencia',
   'Anaheim Union High School District President Al Jabbar',
   'Anaheim Elementary School District Trustee Paolo Magcalas',
   'Anaheim Elementary School District Trustee Ryan Ruelas ',
@@ -21,6 +20,8 @@ const list = [
   'Garden Grove Unified School District Trustee Walter Muneton',
   'Ocean View School District President Gina Clayton Tarvin',
   'Cooperative Campaigns OC',
+  'Planned Parenthood',
+  'Zeke Hernandez - Board of Trustees for Rancho Santiago Community College',
 ]
 
 export default function Endorsements() {
