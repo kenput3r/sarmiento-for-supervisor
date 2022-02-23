@@ -28,7 +28,7 @@ export default function Footer() {
         phone,
       }
       const res = await axios.post('/api/email-signup', { data })
-      if (res.status === 200) {
+      if (res) {
         setEmail('')
         setPhone('')
       } else {
@@ -44,11 +44,11 @@ export default function Footer() {
           <form className="w-[375px] mb-6 max-w-full">
             <label className="block" htmlFor="FooterEmailAddress">
               {footerText.email[language]}
-              <input className="block w-full" type="email" id="FooterEmailAddress" name="email" onChange={(e) => setEmail(e.target.value)} />
+              <input className="block w-full" type="email" id="FooterEmailAddress" name="email" onChange={(e) => setEmail(e.target.value)} value={email} />
             </label>
             <label className="inline-block w-9/12 pr-6" htmlFor="Phone">
               {footerText.phone[language]}
-              <input className="block w-full" type="tel" id="Phone" name="Phone" onChange={(e) => setPhone(e.target.value)} />
+              <input className="block w-full" type="tel" id="Phone" name="Phone" onChange={(e) => setPhone(e.target.value)} value={phone} />
             </label>
             <div className="inline-block w-3/12">
               <button className="inline-block bg-blue-500 text-white py-2 px-3 border border-solid border-blue-500 w-full" type="button" onClick={(e) => submit(e)}>Join Us</button>

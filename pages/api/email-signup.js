@@ -24,7 +24,7 @@ async function checkForContact(email) {
 }
 
 async function createContact(contact) {
-  const url = `https://api.constantcontact.com/v2/contacts?action_by=ACTION_BY_OWNER&api_key=${process.env.API_KEY}`
+  const url = `https://api.constantcontact.com/v2/contacts?action_by=ACTION_BY_VISITOR&api_key=${process.env.API_KEY}`
   const data = {
     lists: [
       {
@@ -50,7 +50,7 @@ async function createContact(contact) {
       data,
     })
 
-    return response
+    return response.data
   } catch (e) {
     throw (new Error(e.message))
   }
@@ -58,35 +58,27 @@ async function createContact(contact) {
 
 async function updateContact(previousInfo, newInfo) {
   const prevInfo = previousInfo.results[0]
-  const url = `https://api.constantcontact.com/v2/contacts/${prevInfo.id}?action_by=ACTION_BY_OWNER&api_key=${process.env.API_KEY}`
-  const data = {
-    lists: [
-      {
-        id: process.env.LIST_ID,
-      },
-    ],
-    cell_phone: newInfo.phone ? newInfo.phone : prevInfo.cell_phone,
-    confirmed: false,
-    email_addresses: [
-      {
-        email_address: newInfo.email,
-      },
-    ],
-    first_name: newInfo.fName ? newInfo.fName : prevInfo.first_name,
-    last_name: newInfo.lName ? newInfo.lName : prevInfo.last_name,
+  const url = `https://api.constantcontact.com/v2/contacts/${prevInfo.id}?action_by=ACTION_BY_VISITOR&api_key=${process.env.API_KEY}`
+  prevInfo.lists.push({ id: process.env.LIST_ID })
+  if (newInfo.fName.length > 0) {
+    prevInfo.first_name = newInfo.fName
   }
+  if (newInfo.lName.length > 0) {
+    prevInfo.last_name = newInfo.lName
+  }
+  if (newInfo.phone && newInfo.phone.length > 0) {
+    prevInfo.cell_phone = newInfo.phone
+  }
+
+  console.log(prevInfo)
 
   try {
     const response = await axios(url, {
-      method: 'Put',
-      headers: {
-        Authorization: `Bearer ${process.env.TOKEN}`,
-        'Content-Type': 'application/json',
-      },
-      body: data,
+      method: 'PUT',
+      headers,
+      data: prevInfo,
     })
-
-    return response
+    return response.data
   } catch (e) {
     throw (new Error(e.message))
   }
@@ -97,10 +89,9 @@ export default async function handler(req, res) {
   const previousContact = await checkForContact(contact.email)
   if (!previousContact.exists) {
     const newContact = await createContact(contact)
-    res.send(newContact)
+    res.status(200).json({ data: newContact })
   } else {
     const updatedContact = await updateContact(previousContact.data, contact)
-    res.send(updatedContact)
+    res.status(200).json({ data: updatedContact })
   }
-  res.send({ message: 'nothing updated' })
 }

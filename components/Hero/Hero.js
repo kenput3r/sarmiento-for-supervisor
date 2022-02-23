@@ -22,7 +22,7 @@ export default function Hero() {
         lName,
       }
       const res = await axios.post('/api/email-signup', { data })
-      if (res.status === 200) {
+      if (res) {
         setEmail('')
         setFName('')
         setLName('')
@@ -36,10 +36,10 @@ export default function Hero() {
   return (
     <section className="relative">
       <div className="w-full 2xl:h-screen">
-        <Image src={hero} alt="Vicente Sarmiento" layout="responsive" />
+        <Image src={hero} alt="Vicente Sarmiento" layout="responsive" loading="eager" placeholder="blur" />
       </div>
       <div className="xl:-mt-60 lg:-mt-36 md:-mt-28 phones:-mt-16">
-        <Image src={orangeGroves} alt="orange groves" layout="responsive" />
+        <Image src={orangeGroves} alt="orange groves" layout="responsive" loading="eager" />
       </div>
       <div className="bg-blue-500 p-14 w-full lg:top-10 lg:right-10 xl:top-20 xl:right-20 lg:absolute lg:bg-blue-500/75 lg:w-[500px] xl:w-[598px] lg:rounded-md phones:py-7 phones:px-3.5">
         <div className="text-white text-[45px] font-bold text-center mb-3">
@@ -49,15 +49,15 @@ export default function Hero() {
         <form className="mx-auto md:w-[612px] lg:w-full">
           <div className="flex flex-row justify-between mb-2">
             <div className="w-6/12 pr-1">
-              <input type="text" id="FirstName" name="FirstName" aria-label={contactText.firstName[language]} placeholder={contactText.firstName[language]} className="w-full rounded-md" onChange={(e) => setFName(e.target.value)} />
+              <input type="text" id="FirstName" name="FirstName" aria-label={contactText.firstName[language]} placeholder={contactText.firstName[language]} className="w-full rounded-md" onChange={(e) => setFName(e.target.value)} value={fName} />
             </div>
             <div className="w-6/12 pl-1">
-              <input type="text" id="LastName" name="LastName" aria-label={contactText.lastName[language]} placeholder={contactText.lastName[language]} className="w-full rounded-md" onChange={(e) => setLName(e.target.value)} />
+              <input type="text" id="LastName" name="LastName" aria-label={contactText.lastName[language]} placeholder={contactText.lastName[language]} className="w-full rounded-md" onChange={(e) => setLName(e.target.value)} value={lName} />
             </div>
           </div>
 
           <div className="mb-2">
-            <input type="email" id="Email" name="Email" aria-label={contactText.email[language]} placeholder={contactText.email[language]} className="w-full rounded-md" onChange={(e) => setEmail(e.target.value)} />
+            <input type="email" id="Email" name="Email" aria-label={contactText.email[language]} placeholder={contactText.email[language]} className="w-full rounded-md" onChange={(e) => setEmail(e.target.value)} value={email} />
           </div>
           <p className="text-white mb-6">{heroText.disclaimer[language]}</p>
           <div className="text-center">
