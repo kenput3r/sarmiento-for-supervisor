@@ -19,7 +19,7 @@ const list = [
   'Anaheim Elementary School District President Juan Alvarez',
   'Garden Grove Unified School District Trustee Walter Muneton',
   'Ocean View School District President Gina Clayton Tarvin',
-  'Cooperative Campaigns OC',
+  'Cooperative Campaigns',
   'Planned Parenthood',
   'Zeke Hernandez - Board of Trustees for Rancho Santiago Community College',
 ]
