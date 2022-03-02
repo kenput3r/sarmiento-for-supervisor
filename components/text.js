@@ -256,8 +256,8 @@ export const updatesText = {
     },
     {
       title: {
-        english: 'LA OPINION: SANTA ANA MAYOR SEEKS ORANGE COUNTY DISTRIC 2 SUPERVISOR',
-        spanish: 'LA OPINION: SANTA ANA MAYOR SEEKS ORANGE COUNTY DISTRIC 2 SUPERVISOR',
+        english: 'LA OPINION: SANTA ANA MAYOR SEEKS ORANGE COUNTY DISTRICT 2 SUPERVISOR',
+        spanish: 'LA OPINION: SANTA ANA MAYOR SEEKS ORANGE COUNTY DISTRICT 2 SUPERVISOR',
       },
       excerpt: {
         english: 'The new District 2 on the board of supervisors needs a voice that will fight for the resources and attention needed to help our residents feel safe, combat the  Covid 19 Pandemic , and reduce homelessness!',
