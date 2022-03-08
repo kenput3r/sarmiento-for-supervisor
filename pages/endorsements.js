@@ -20,7 +20,7 @@ const list = [
   'Garden Grove Unified School District Trustee Walter Muneton',
   'Ocean View School District President Gina Clayton Tarvin',
   'Cooperative Campaigns',
-  'Planned Parenthood',
+  'Community Action Fund of Planned Parenthood of Orange & San Bernardino Counties',
   'Zeke Hernandez - Board of Trustees for Rancho Santiago Community College',
 ]
 
