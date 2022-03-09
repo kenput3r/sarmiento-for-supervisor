@@ -246,33 +246,33 @@ export const updatesText = {
     {
       title: {
         english: 'Orange County Register: SANTA ANA OFFERS FREE DOWNTOWN PARKING TO HELP BUSINESSES HURT BY STREETCAR CONSTRUCTION',
-        spanish: 'Orange County Register: SANTA ANA OFFERS FREE DOWNTOWN PARKING TO HELP BUSINESSES HURT BY STREETCAR CONSTRUCTION',
+        spanish: 'Orange County Register: SANTA ANA OFRECE ENSTACIONAMIENTO GRATIS EN DOWNTOWN PARA AYUDAR NEGOCIOS AFECTADOS POR LA CONSTRUCTION DEL TRANVIA',
       },
       excerpt: {
         english: 'I have always supported small businesses and believe our local governments can and should support business where it can. That is why I support free public parking and other actions that will help our merchants keep attracting customers.',
-        spanish: 'I have always supported small businesses and believe our local governments can and should support business where it can. That is why I support free public parking and other actions that will help our merchants keep attracting customers.',
+        spanish: 'Yo siempre he soportado pequeños negocios y pienso que nuestro gobierno local puede y debería apoyar negocios donde pueda. Por esta razón yo soporto estacionamiento publico gratis y otros acciones que puedan ayudar a nuestros vendedores atraer clientes.',
       },
       link: 'https://www.ocregister.com/2022/02/14/santa-ana-offers-free-downtown-parking-to-help-businesses-hurt-by-streetcar-construction/',
     },
     {
       title: {
         english: 'LA OPINION: SANTA ANA MAYOR SEEKS ORANGE COUNTY DISTRICT 2 SUPERVISOR',
-        spanish: 'LA OPINION: SANTA ANA MAYOR SEEKS ORANGE COUNTY DISTRICT 2 SUPERVISOR',
+        spanish: 'LA OPINION: ALCALDE DE SANTA ANA BUSCA SER SUPERVISOR DEL DISTRITO 2 DEL CONDADO DE ORANGE',
       },
       excerpt: {
         english: 'The new District 2 on the board of supervisors needs a voice that will fight for the resources and attention needed to help our residents feel safe, combat the  Covid 19 Pandemic , and reduce homelessness!',
-        spanish: 'The new District 2 on the board of supervisors needs a voice that will fight for the resources and attention needed to help our residents feel safe, combat the  Covid 19 Pandemic , and reduce homelessness!',
+        spanish: 'El nuevo Distrito 2 en la junta de supervisores necesita una voz que luche para los recursos y atención necesaria para ayudar a nuestros residentes sentirse seguros, combatir el Covid-19 Pandemia, y reducir la falta de vivienda.',
       },
       link: 'https://laopinion.com/2022/01/22/alcalde-de-santa-ana-busca-ser-supervisor-del-distrito-2-del-condado-de-orange/',
     },
     {
       title: {
         english: 'Orange County Breeze: Santa Ana Mayor Vicente Sarmiento announces candidacy for Orange County Supervisor',
-        spanish: 'Orange County Breeze: Santa Ana Mayor Vicente Sarmiento announces candidacy for Orange County Supervisor',
+        spanish: 'Orange County Breeze: Alcalde de Santa Ana Vicente Sarmiento Anuncia Candidatura Para ser Supervisor del Condado de Orange',
       },
       excerpt: {
         english: 'I have always fought for what is right for all of my constituents. As the new Supervisor of District 2, I will bring my passion for improvement to the County level and help our residents & businesses continue to have a chance to thrive!',
-        spanish: 'I have always fought for what is right for all of my constituents. As the new Supervisor of District 2, I will bring my passion for improvement to the County level and help our residents & businesses continue to have a chance to thrive!',
+        spanish: 'Yo Siempre he luchado para lo que es justo para todos mis constituyentes. Como el nuevo Supervisor del Distrito 2, voy a traer my passion para el mejoramiento al nivel del país y voy a ayudar a nuestros residentes y negocios para tener una oportunidad a prosperar. ',
       },
       link: 'https://www.oc-breeze.com/2022/01/18/208164_santa-ana-mayor-vicente-sarmiento-announces-candidacy-for-orange-county-supervisor/',
     },
