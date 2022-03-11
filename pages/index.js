@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Layout from '../components/layout'
 import { useAppContext } from '../components/context'
 import Hero from '../components/Hero/Hero'
+import Banner from '../components/Banner/Banner'
 import Priorities from '../components/Priorities/Priorities'
 import Updates from '../components/Updates/Updates'
 import Video from '../components/Video/Video'
@@ -30,7 +31,10 @@ export default function Home() {
 
       <Updates />
 
-      <Video url={videoUrl[language]} classes="py-6" />
+      <Video url={videoUrl[language]} classes="py-6 phones:py-0" />
+
+      <Banner />
+
     </Layout>
 
   )

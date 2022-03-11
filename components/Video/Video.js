@@ -5,7 +5,7 @@ export default function Video({ url, classes }) {
   return (
     <section className={classes}>
       <div className="max-w-screen-lg mx-auto">
-        <div className="relative h-0 mt-4 pb-fluid-video phones:my-8">
+        <div className="relative h-0 my-4 pb-fluid-video phones:my-0">
           <iframe
             className="absolute top-0 left-0 w-full h-full"
             width="560"

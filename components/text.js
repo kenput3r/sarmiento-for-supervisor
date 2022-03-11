@@ -71,12 +71,20 @@ export const heroText = {
     spanish: 'ÚNETE A NUESTRA CAMPAÑA',
   },
   disclaimer: {
-    english: 'Enter your phone number above to join our team. By clicking “sign up” you agree to receive messages to support Vicente Sarmiento for OC Supervisor. Message & data rates may apply. Text STOP to opt out.',
+    english: 'Enter your email above to join our team. By clicking “sign up” you agree to receive messages to support Vicente Sarmiento for OC Supervisor. You may opt-out at any time.',
     spanish: 'Ingrese su correo electrónico arriba para unirse a nuestro equipo. Eligiendo “suscribirte” asegura que está de acuerdo en recibir mensajes para apoyar a Vicente Sarmiento para OC Supervisor. Usted puede optar por no en cualquier momento. ',
   },
   submit: {
     english: 'SIGN UP',
     spanish: 'Suscribirte',
+  },
+  successMessage: {
+    english: 'SUBSCRIBED',
+    spanish: 'SUSCRITO',
+  },
+  errorMessage: {
+    english: 'Something went wrong. Please try again later.',
+    spanish: 'Error. Inténtelo de nuevo más tarde.',
   },
 }
 
