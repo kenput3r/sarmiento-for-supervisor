@@ -5,7 +5,7 @@ import bannerImage from '../../images/banner.png';
 export default function Banner() {
   return (
     <section>
-      <Image src={bannerImage} alt="Vicente Sarmiento for OC Supervisor. Election Day June 7" />
+      <Image src={bannerImage} alt="Vicente Sarmiento for OC Supervisor. Election Day June 7" placeholder="blur" layout="responsive" />
     </section>
   )
 }
