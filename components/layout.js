@@ -45,7 +45,7 @@ export default function Layout({ children, home }) {
       <header className="flex flex-row bg-blue-500 py-3.5 px-3.5 justify-between items-center fixed top-0 w-full z-10 md:px-8">
         {home ? (
           <h1 className="flex-1 md:flex-auto">
-            <Image src={logo} alt="Vicente Sarmiento For OC Supervisor" />
+            <Image src={logo} alt="Vicente Sarmiento For OC Supervisor" quality={100} loading="eager" />
           </h1>
         ) : (
           <div className="hover:cursor-pointer flex-1 md:flex-auto">
