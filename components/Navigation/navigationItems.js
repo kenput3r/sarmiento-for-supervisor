@@ -56,12 +56,12 @@ const navigationItems = [
   {
     text: {
       english: 'District Map',
-      spanish: '',
+      spanish: 'Mapa Del Distrito',
     },
     path: '/district-map',
     primary: false,
-    secondary: false,
-    icon: '',
+    secondary: true,
+    icon: 'map',
   },
 ]
 
