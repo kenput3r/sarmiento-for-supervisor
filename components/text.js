@@ -95,52 +95,61 @@ export const prioritiesText = {
   },
   reduceHomelessness: {
     english: 'Reducing Homelessness',
-    spanish: 'Reducing Homelessness',
+    spanish: 'Reduciendo Gente sin Hogar',
     excerpt: {
       english: 'Reduce the number of those experiencing homelessness.',
       spanish: 'Reducir el número de personas sin hogar.',
     },
-    link: '',
+    link: '/priorities/reduce-homelessness',
   },
   publicHealth: {
     english: 'Public Health',
-    spanish: 'Public Health',
+    spanish: 'Salud Pública',
     excerpt: {
       english: 'Improve the delivery of public health care.',
       spanish: 'Mejorar la entrega del cuidado de la salud pública.',
     },
-    link: '',
+    link: '/priorities/public-health',
   },
   openSpace: {
     english: 'Open Space',
-    spanish: 'Open Space',
+    spanish: 'Creciendo Espacio Abierto',
     excerpt: {
       english: 'Increase park and open space.',
       spanish: 'Aumentar parques y espacio abierto.',
     },
-    link: '',
+    link: '/priorities/open-space',
   },
   workingFamilies: {
     english: 'Working Families',
-    spanish: 'Working Families',
+    spanish: 'Familias Trabajadoras',
     excerpt: {
       english: 'Help small businesses and working families.',
       spanish: 'Ayudar a pequeñas empresas y familias trabajadoras.',
     },
-    link: '',
+    link: '/priorities/working-families',
   },
   transparentGovernment: {
     english: 'Transparent Government',
-    spanish: 'Transparent Government',
+    spanish: 'Gobierno Transparente',
     excerpt: {
       english: 'Open and transparent government.',
       spanish: 'Gobierno transparente y abierto. ',
     },
-    link: '',
+    link: '/priorities/transparent-government',
+  },
+  protectingNeighborhoods: {
+    english: 'Protecting Neighborhoods',
+    spanish: 'Protegiendo Vecindarios',
+    excerpt: {
+      english: 'Protect our neighborhoods by passing policies that give our renters increased eviction protections.',
+      spanish: 'Proteger nuestros vecindarios con pasar leyes que protegen renteros de desalojo ilegal.',
+    },
+    link: '/priorities/protecting-neighborhoods',
   },
   learnMore: {
     english: 'Learn More',
-    spanish: 'Learn More',
+    spanish: 'Descubra Más',
   },
 }
 
@@ -151,7 +160,7 @@ export const ctaText = {
   },
   learnMore: {
     english: 'Learn More',
-    spanish: 'Learn More',
+    spanish: 'Descubra Más',
   },
 }
 
@@ -309,3 +318,69 @@ export const socialText = [
     url: 'mailto:info@sarmientoforsupervisory.com',
   },
 ]
+
+export const reduceHomelessnessText = {
+  title: {
+    english: 'Reducing Homelessness',
+    spanish: 'Reduciendo Gente sin Hogar',
+  },
+  paragraph: {
+    english: 'We will reduce the amount of people experiencing homelessness by using and not sitting on federal funds available to the County. We can provide wrap-around services and help provide job training, opportunity and hope to help people re-enter the workforce and keep stable housing. For those that are experiencing mental illness, we can use special teams of medical professionals working alongside specially trained deputies to get them the help they need and off the streets.',
+    spanish: 'Vamos a reducir la cantidad de gente viviendo sin techo con dedicando los fondos disponibles del gobierno Federal que horita no más se está sentando el Condado con este dinero. Podemos proveer muchos servicios incluyendo entrenamiento para trabajos nuevos, oportunidad y esperanza para ayudar la gente entrar de nuevo otra vez a trabajar y mantener un hogar seguro. Para los que están sufriendo de enfermedades mentales, podemos usar equipos especiales con médicos profesionales trabajando juntos con policías entrenados especialmente para esto y ofrecer les la ayuda que necesitan y un camino para salir de las calles.',
+  },
+}
+
+export const publicHealthText = {
+  title: {
+    english: 'Public Health',
+    spanish: 'Salud Pública',
+  },
+  paragraph: {
+    english: 'Cal Optima needs to be restructured. We have to improve the delivery of health care to our most vulnerable residents. We can do better and will re-focus additional resources to the people most impacted by the pandemic and its economic fallout. ',
+    spanish: 'Se tiene que reformar “Cal Optima”. Necesitamos mejorar la calidad de proveer sus servicios de buena salud a nuestros residentes más vulnerables. Podemos mejorar y vamos a enfocar recursos adicionales para la gente.',
+  },
+}
+
+export const openSpaceText = {
+  title: {
+    english: 'Open Space',
+    spanish: 'Creciendo Espacio Abierto',
+  },
+  paragraph: {
+    english: 'We could dramatically increase our open park spaces by entering into partnerships with private property holders and converting land managed by the County into community gathering spaces that can be used for sports, parks, community gardens the arts, and other activities. We can expand the number of regional parks and build more walking and biking trails in Central O.C. to help keep our community healthy.',
+    spanish: 'Podemos crecer la cantidad de espacio abierto, entrando en contratos con dueños de propiedad privada y convirtiendo terrenos manejados por el Condado a espacios nuevos donde la comunidad puede juntarse. Los terrenos se pueden usar para deportes, parques, los artes, jardines comunitarios, y otras actividades. También podemos crecer el número de parques regionales y construir más caminos para bicicletas caminar en el Centro de O.C., para que la gente mantenga buena salud.',
+  },
+}
+
+export const workingFamiliesText = {
+  title: {
+    english: 'Working Families',
+    spanish: 'Familias Trabajadoras',
+  },
+  paragraph: {
+    english: 'Our working families deserve to feel safe and secure in their communities. I will support policies that help our residents stay in the communities they call home. Too many of our friends and neighbors are having to leave our community because of the sharp rise in the cost of housing.  We can help by advocating for dignified wages and essential benefits for workers. We can also help by limiting the increases in rent for our seniors and other people who lived on fixed incomes. We can also attract high-paying jobs by passing policies that are proven to work, such as providing business incentives for hiring locally; our residents get good-paying jobs and businesses get great employees and incentives.',
+    spanish: 'Nuestras familias trabajadoras merecen sentir se seguros en sus comunidades. Voy apoyar políticas que ayudan nuestros residentes quedar se en las comunidades donde viven. Demasiados de nuestros amigos y vecinos tienen que ir se de nuestra comunidad por la cantidad que están subiendo los gastos de mantener un hogar. Podemos ayudar con apoyando por un sueldo digno y beneficios esenciales para nuestros trabajadores. También podemos ayudar con poner límite en la cantidad que pueden subir la renta para nuestros residentes mayores y otros que viven de ingresos fijos. Apoyare políticas que son probados y pueden atraer trabajos que pagan un buen sueldo. Como ofreciendo incentivos a negocios por conseguir trabajadores que viven en la comunidad; nuestra gente obtiene un trabajo que paga bien y la compañía obtiene buenos empleados con incentivos.',
+  },
+}
+
+export const transparentGovernmentText = {
+  title: {
+    english: 'Transparent Government',
+    spanish: 'Gobierno Transparente',
+  },
+  paragraph: {
+    english: 'I will fight for a more open and transparent County government that is accountable to its residents. I will also make civic engagement easier and more resident-friendly. No one should have to feel intimidated or scared when they have an issue that needs to be addressed by their elected officials.',
+    spanish: 'Luchare para tener un gobierno que es más abierto, amable y transparente para nuestros residentes. También necesitamos arreglar los servicios del Condado que sean más amigable y ayudante para residentes que necesitan pedir ayuda con algún servicio. Nadie debe de sentirse intimidado o asustados cuando tengan algún asunto que necesita ser dirigido por sus funcionarios electos.',
+  },
+}
+
+export const protectingNeighborhoodsText = {
+  title: {
+    english: 'Protecting Neighborhoods',
+    spanish: 'Protegiendo Vecindarios',
+  },
+  paragraph: {
+    english: 'We can help protect our neighborhoods by passing policies that give our renters increased eviction protections and helping them apply for State and Federal funds for rental assistance. There is also resources available to help our neighborhood businesses recover from the economic fallout of this pandemic and stay in business. We also need new housing that our residents can afford, that is why I will fight for policies that require new construction of housing to set aside a percentage of new units for affordable housing that working families can afford. We also need to build more homeless shelters in other O.C. cities, Santa Ana & Anaheim shouldn’t have to shoulder this problem alone, the rest of the County’s cities need to contribute to the solution.',
+    spanish: 'Podemos proteger nuestros vecindarios con pasar leyes que protegen renteros de desalojo ilegal. También hay asistencia del gobierno Estatal y Federal para ayudar renteros que deben renta y también hay recursos para mantener abiertos nuestros negocios. También necesitamos nuevas casas, apartamentos y condominios que la gente de nuestros comunidades pueden pagar, por eso voy apoyar políticas que fuerzan nuevos unidades que están construyendo tengan un porcentaje de unidades con precios accesibles. Al mismo tiempo necesitamos construir más refugios para indigentes en otras ciudades del Condado, no nada más Anaheim y Santa Ana deben de cargar este peso, las otras ciudades también necesitan ayudar.',
+  },
+}

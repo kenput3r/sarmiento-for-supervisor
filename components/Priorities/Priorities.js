@@ -12,6 +12,8 @@ import publicHealthSp from '../../images/public-health-sp.svg'
 import openSpaceSp from '../../images/open-space-sp.svg'
 import workingFamiliesSp from '../../images/working-families-sp.svg'
 import transparentGovernmentSp from '../../images/transparent-government-sp.svg'
+import protectingNeighborhoods from '../../images/protecting-neighborhoods.svg'
+import protectingNeighborhoodsSp from '../../images/protecting-neighborhoods-sp.svg'
 import { prioritiesText } from '../text'
 
 const images = {
@@ -34,6 +36,10 @@ const images = {
   transparentGovernment: {
     english: transparentGovernment,
     spanish: transparentGovernmentSp,
+  },
+  protectingNeighborhoods: {
+    english: protectingNeighborhoods,
+    spanish: protectingNeighborhoodsSp,
   },
 }
 

@@ -53,6 +53,16 @@ const navigationItems = [
     secondary: true,
     icon: 'endorsement',
   },
+  {
+    text: {
+      english: 'District Map',
+      spanish: '',
+    },
+    path: '/district-map',
+    primary: false,
+    secondary: false,
+    icon: '',
+  },
 ]
 
 export default navigationItems
