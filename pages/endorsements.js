@@ -5,8 +5,18 @@ import Layout from '../components/layout';
 import thumbsUp from '../images/thumbs-up.svg';
 
 const list = [
+  'Democratic Party of Orange County (DPOC)',
+  'Orange County Labor Federation (OCLF)',
+  'Planned Parenthood Community Action Fund of Orange and San Bernardino Counties',
+  'National Union of Health Workers - (NUHW)',
+  'Service Employees International Union – United Healthcare Workers West (SEIU-UHW)',
+  'United Food &amp; Commercial Workers (UFCW) Local 324',
+  'Association of Orange County Deputy District Attorneys (AOCDDA)',
+  'Cooperative Campaigns',
   'Alex Padilla - U.S. Senator',
   'Katrina Foley - OC Supervisor',
+  'Ricardo Lara – California Insurance Commissioner',
+  'Ada Briceno – Democratic Party of Orange County Chair ',
   'Johnathan Ryan Hernandez - Santa Ana City Councilmember',
   'Jessie Lopez - Santa Ana City Councilmember',
   'Carolyn Torres - Santa Ana Unified School District Trustee',
@@ -23,14 +33,6 @@ const list = [
   'Letitia Clark - Tustin City Councilmember',
   'Walter Muneton - Garden Grove Unified School District Trustee',
   'Gina Clayton Tarvin - Ocean View School District President',
-  'Ada Briceno – Democratic Party of Orange County Chair ',
-  'SEIU-UHW',
-  'Association of Orange County Deputy District Attorneys (AOCDDA)',
-  'United Food &amp; Commercial Workers (UFCW) Local 324',
-  'Democratic Party of Orange County (DPOC)',
-  'Orange County Labor Federation (OCLF)',
-  'Planned Parenthood Community Action Fund of Orange and San Bernardino Counties',
-  'Cooperative Campaigns',
 ]
 
 export default function Endorsements() {
