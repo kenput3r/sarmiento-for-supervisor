@@ -41,7 +41,7 @@ export default function NavigationDrawer({ classes, showDrawer }) {
                     <a className={`${router.pathname === item.path ? 'underline' : ''} ${anchorClasses}`}>
                       <span className="mr-4">{item.text[language]}</span>
                       {' '}
-                      <Image src={icons[item.icon]} alt={item.text[language]} />
+                      <Image src={icons[item.icon]} alt={item.text[language]} className="rounded-full" />
                     </a>
                   </Link>
                 </li>
@@ -52,7 +52,7 @@ export default function NavigationDrawer({ classes, showDrawer }) {
                 <a className={`p-2 ${anchorClasses}`} href={item.path} target="_blank" rel="noreferrer">
                   <span className="mr-4">{item.text[language]}</span>
                   {' '}
-                  <Image src={icons[item.icon]} alt={item.text[language]} />
+                  <Image src={icons[item.icon]} alt={item.text[language]} className="rounded-full" />
                 </a>
               </li>
             )

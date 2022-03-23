@@ -12,10 +12,21 @@ const navigationItems = [
   },
   {
     text: {
-      english: 'Press Release',
-      spanish: 'Comunicado de Prensa',
+      english: 'Meet Vicente',
+      spanish: 'Meet Vicente',
     },
-    path: '/press-release',
+    path: '/meet-vicente',
+    primary: false,
+    secondary: false,
+    styles: '',
+    icon: 'contact',
+  },
+  {
+    text: {
+      english: 'News',
+      spanish: 'Noticias',
+    },
+    path: '/articles',
     primary: false,
     secondary: true,
     styles: '',
@@ -35,7 +46,7 @@ const navigationItems = [
   {
     text: {
       english: 'Donate',
-      spanish: 'Donacion',
+      spanish: 'Donación',
     },
     path: 'https://www.efundraisingconnections.com/c/VinceSarmiento/',
     primary: true,
@@ -46,7 +57,7 @@ const navigationItems = [
   {
     text: {
       english: 'Endorsements',
-      spanish: 'Endorsements',
+      spanish: 'Endosos',
     },
     path: '/endorsements',
     primary: false,
