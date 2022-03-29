@@ -13,7 +13,7 @@ const navigationItems = [
   {
     text: {
       english: 'About Vicente',
-      spanish: 'About Vicente',
+      spanish: 'Sobre Vicente',
     },
     path: '/about-vicente',
     primary: false,
