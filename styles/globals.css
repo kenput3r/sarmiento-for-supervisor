@@ -5,3 +5,9 @@
 root {
   --orange: #ea8329;
 }
+
+@media (min-width: 500px) {
+  .grid-container > * {
+    grid-area: grid-container;
+  }
+}
