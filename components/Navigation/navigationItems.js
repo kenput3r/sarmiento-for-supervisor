@@ -12,12 +12,12 @@ const navigationItems = [
   },
   {
     text: {
-      english: 'Meet Vicente',
-      spanish: 'Meet Vicente',
+      english: 'About Vicente',
+      spanish: 'About Vicente',
     },
-    path: '/meet-vicente',
+    path: '/about-vicente',
     primary: false,
-    secondary: false,
+    secondary: true,
     styles: '',
     icon: 'contact',
   },
