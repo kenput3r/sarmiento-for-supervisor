@@ -399,3 +399,22 @@ export const aboutVicenteText = {
     'El alcalde Sarmiento y su familia han vivido en Santa Ana y alrededor  desde 1965. Asistió a las escuelas primarias John Muir, Sierra y Willard Intermediate. El alcalde Sarmiento ahora vive en una casa histórica construida en el 1929 en el vecindario de Saddleback View, a tres cuadras de donde creció como niño. Actualmente, él y su esposa Eva, también abogada, son los principales propietarios de un despacho de abogados en Santa Ana. Tienen tres hijos que esperan que aprendan el valor del servicio público y la contribución a su comunidad.',
   ],
 }
+
+export const yardSign = {
+  h1: {
+    english: 'Request a Lawn Sign',
+    spanish: 'Request a Lawn Sign',
+  },
+  h2: {
+    english: 'Use a permanent address where you can receive mail.',
+    spanish: 'Use un domicilio permanente donde podra recibir correo.',
+  },
+  signTypeLawn: {
+    english: 'Send me a lawn sign',
+    spanish: 'Send me a lawn sign',
+  },
+  signTypeWindow: {
+    english: 'Send me a window sign',
+    spanish: 'Send me a window sign',
+  },
+}
