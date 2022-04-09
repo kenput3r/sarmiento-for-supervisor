@@ -7,31 +7,42 @@ import thumbsUp from '../images/thumbs-up.svg';
 const list = [
   'Democratic Party of Orange County (DPOC)',
   'Orange County Labor Federation (OCLF)',
-  'Planned Parenthood Community Action Fund of Orange and San Bernardino Counties',
-  'National Union of Health Workers - (NUHW)',
+  'United Food & Commercial Workers (UFCW) Local 324',
+  'Unite Here Local 11',
   'Service Employees International Union – United Healthcare Workers West (SEIU-UHW)',
-  'United Food &amp; Commercial Workers (UFCW) Local 324',
-  'Association of Orange County Deputy District Attorneys (AOCDDA)',
+  'National Union of Health Workers - (NUHW)',
+  'Teamsters Local 952',
+  'American Federation of State, County, and Municipal Employees (AFSCME)',
+  'United Domestic Workers (UDW)',
   'Cooperative Campaigns',
+  'CHISPA',
+  'Orange County Civic Engagement Table Action',
+  'Service Employees International Union (SEIU 721)',
+  'Association of Orange County Deputy District Attorneys (AOCDDA)',
+  'Planned Parenthood Community Action Fund of Orange and San Bernardino Counties',
+  '',
   'Alex Padilla - U.S. Senator',
-  'Katrina Foley - OC Supervisor',
   'Ricardo Lara – California Insurance Commissioner',
-  'Ada Briceno – Democratic Party of Orange County Chair ',
+  'Tom Umberg – CA. State Senator',
+  'Katrina Foley – Orange County Supervisor',
+  'Ada Briceno – Democratic Party of Orange County Chair ',
   'Johnathan Ryan Hernandez - Santa Ana City Councilmember',
-  'Jessie Lopez - Santa Ana City Councilmember',
+  'Jessie Lopez - Santa Ana City Councilmember ',
   'Carolyn Torres - Santa Ana Unified School District Trustee',
   'Dr. Rigoberto Rodriguez - Santa Ana Unified School District Trustee',
+  'Dr. Alfonso Alvarez – Santa Ana Unified School District Trustee',
   'Sal Tinajero - Rancho Santiago Community College District Trustee',
   'David Crockett - Rancho Santiago Community College District Trustee',
   'Zeke Hernandez - Rancho Santiago Community College District Trustee',
-  'Dr. Jose F. Moreno - Anaheim City Councilmember',
+  'Dr. Jose F. Moreno - Anaheim City Councilmember ',
+  'Al Jabbar - Anaheim Union High School District President',
   'Dr. Jose Paolo Magcalas - Anaheim Elementary School District Trustee',
   'Ryan A. Ruelas - Anaheim Elementary School District Trustee',
   'Juan Gabriel Alvarez - Anaheim Elementary School District President',
-  'Al Jabbar - Anaheim Union High School District President',
-  'Rebecca “Beckie” Gomez - Tustin Councilmember',
-  'Letitia Clark - Tustin City Councilmember',
+  'Rebecca “Beckie” Gomez - Tustin Councilmember ',
+  'Letitia Clark - Tustin City Councilmember ',
   'Walter Muneton - Garden Grove Unified School District Trustee',
+  'Ahmad Zahra – Fullerton City Councilmember',
   'Gina Clayton Tarvin - Ocean View School District President',
 ]
 
@@ -55,7 +66,7 @@ export default function Endorsements() {
         {list.map((item) => (
           <li className="flex flex-row items-center mb-1.5 list-none">
             <div className="flex">
-              <Image src={thumbsUp} alt="thumbs up" height={16} width={16} />
+              <Image src={thumbsUp} alt="thumbs up" height={16} width={16} priority />
             </div>
             <div className="pl-1.5">
               {item}

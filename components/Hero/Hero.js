@@ -52,10 +52,10 @@ export default function Hero() {
   return (
     <section className="relative">
       <div className="w-full 2xl:h-screen">
-        <Image src={hero} alt="Vicente Sarmiento" layout="responsive" loading="eager" placeholder="blur" />
+        <Image src={hero} alt="Vicente Sarmiento" layout="responsive" loading="eager" priority placeholder="blur" />
       </div>
       <div className="xl:-mt-60 lg:-mt-36 md:-mt-28 phones:-mt-16">
-        <Image src={orangeGroves} alt="orange groves" layout="responsive" loading="eager" />
+        <Image src={orangeGroves} alt="orange groves" layout="responsive" loading="eager" priority />
       </div>
       <div className="bg-blue-500 relative p-14 w-full lg:top-10 lg:right-10 xl:top-20 xl:right-20 lg:absolute lg:bg-blue-500/75 lg:w-[500px] xl:w-[598px] lg:rounded-md phones:py-7 phones:px-3.5">
         <div id="content" className={isLoading || showMessage ? 'opacity-0' : 'opacity-100'}>

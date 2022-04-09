@@ -34,6 +34,16 @@ const navigationItems = [
   },
   {
     text: {
+      english: 'Lawn Signs',
+      spanish: 'Lawn Signs',
+    },
+    path: '/yard-sign',
+    primary: false,
+    secondary: true,
+    icon: 'endorsement',
+  },
+  {
+    text: {
       english: 'Contact',
       spanish: 'Contacto',
     },
