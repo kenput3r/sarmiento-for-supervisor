@@ -403,18 +403,18 @@ export const aboutVicenteText = {
 export const yardSign = {
   h1: {
     english: 'Request a Lawn Sign',
-    spanish: 'Request a Lawn Sign',
+    spanish: 'Pedir un Cartelón',
   },
   h2: {
     english: 'Use a permanent address where you can receive mail.',
-    spanish: 'Use un domicilio permanente donde podra recibir correo.',
+    spanish: 'Use la dirección donde podemos llevar su  Cartelón',
   },
   signTypeLawn: {
     english: 'Send me a lawn sign',
-    spanish: 'Send me a lawn sign',
+    spanish: 'Manda me un Cartelón de Yarda',
   },
   signTypeWindow: {
     english: 'Send me a window sign',
-    spanish: 'Send me a window sign',
+    spanish: 'Manda me un Cartelón de Ventana',
   },
 }
