@@ -14,10 +14,15 @@ const images = {
   },
 };
 
+const video = {
+  english: 'https://www.youtube.com/embed/Ijjt8jX-J4Q',
+  spanish: 'https://www.youtube.com/embed/3yu7NBP_f6Q',
+}
+
 export default function PublicHealth() {
   return (
     <Layout>
-      <Priority priorityName={priorityName} text={text} images={images} />
+      <Priority priorityName={priorityName} text={text} images={images} video={video} />
     </Layout>
   )
 }
