@@ -3,9 +3,12 @@ import PropTypes from 'prop-types'
 import Head from 'next/head'
 import Image from 'next/image'
 import { useAppContext } from '../context'
+import Video from '../Video/Video'
 import quote from '../../images/quote.png'
 
-export default function Priority({ priorityName, text, images }) {
+export default function Priority({
+  priorityName, text, images, video,
+}) {
   const { language } = useAppContext()
   return (
     <>
@@ -32,6 +35,11 @@ export default function Priority({ priorityName, text, images }) {
           <p>{text.paragraph[language]}</p>
         </section>
       </div>
+      {video.english && video.spanish && (
+      <section>
+        <Video url={video[language]} />
+      </section>
+      )}
     </>
   )
 }
@@ -54,4 +62,15 @@ Priority.propTypes = {
       spanish: PropTypes.any.isRequired,
     }.isRequired,
   }.isRequired,
+  video: {
+    english: PropTypes.string || PropTypes.bool,
+    spanish: PropTypes.string || PropTypes.bool,
+  },
+}
+
+Priority.defaultProps = {
+  video: {
+    english: false,
+    spanish: false,
+  },
 }
