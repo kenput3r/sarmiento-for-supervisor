@@ -14,10 +14,15 @@ const images = {
   },
 };
 
+const video = {
+  english: 'https://www.youtube.com/embed/1LdapAhTg0c',
+  spanish: 'https://www.youtube.com/embed/1LdapAhTg0c',
+}
+
 export default function OpenSpace() {
   return (
     <Layout>
-      <Priority priorityName={priorityName} text={text} images={images} />
+      <Priority priorityName={priorityName} text={text} images={images} video={video} />
     </Layout>
   )
 }

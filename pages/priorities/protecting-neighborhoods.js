@@ -14,10 +14,15 @@ const images = {
   },
 };
 
+const video = {
+  english: 'https://www.youtube.com/embed/nwRMnZb5BN0',
+  spanish: 'https://www.youtube.com/embed/nwRMnZb5BN0',
+}
+
 export default function ProtectingNeighborhoods() {
   return (
     <Layout>
-      <Priority priorityName={priorityName} text={text} images={images} />
+      <Priority priorityName={priorityName} text={text} images={images} video={video} />
     </Layout>
   )
 }
