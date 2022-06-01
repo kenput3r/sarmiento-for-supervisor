@@ -6,6 +6,7 @@ import Link from 'next/link'
 import Navigation from './Navigation/Navigation'
 import NavigationDrawer from './Navigation/NavigationDrawer'
 import Footer from './Footer/Footer'
+import Countdown from './Countdown/Countdown'
 import logo from '../images/sarmiento-for-oc-supervisor.svg'
 
 const LinkedLogo = React.forwardRef(({ onClick, href }, ref) => (
@@ -42,7 +43,9 @@ export default function Layout({ children, home }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
-      <header className="flex flex-row bg-blue-500 py-3.5 px-3.5 justify-between items-center fixed top-0 w-full z-10 md:px-8">
+      <Countdown />
+
+      <header className="flex flex-row bg-blue-500 py-3.5 px-3.5 justify-between items-center sticky top-0 w-full z-10 md:px-8">
         {home ? (
           <h1 className="flex-1 md:flex-auto">
             <Image src={logo} alt="Vicente Sarmiento For OC Supervisor" quality={100} loading="eager" priority />
@@ -59,7 +62,7 @@ export default function Layout({ children, home }) {
 
       <NavigationDrawer showDrawer={showDrawer} />
 
-      <main className="mt-[99px] phones:mt-[73px]">{children}</main>
+      <main>{children}</main>
 
       <Footer />
     </div>
