@@ -6,11 +6,14 @@ import Hero from '../components/Hero/Hero'
 import Priorities from '../components/Priorities/Priorities'
 import Updates from '../components/Updates/Updates'
 import Video from '../components/Video/Video'
+import Videos from '../components/Videos/Videos'
 
 const videoUrl = {
-  english: 'https://www.youtube.com/embed/_2b6mf-6IkA?rel=0',
-  spanish: 'https://www.youtube.com/embed/qBIzsSUZB94?rel=0',
+  english: 'https://www.youtube.com/embed/FvFVZrcQr6Y',
+  spanish: 'https://www.youtube.com/embed/FGYSubz_k_k',
 }
+
+const videos = ['https://www.youtube.com/embed/1LdapAhTg0c', 'https://www.youtube.com/embed/6zfDLJzAVGI', 'https://www.youtube.com/embed/Ijjt8jX-J4Q', 'https://www.youtube.com/embed/_2b6mf-6IkA']
 
 export default function Home() {
   const { language } = useAppContext()
@@ -30,7 +33,9 @@ export default function Home() {
 
       <Updates />
 
-      <Video url={videoUrl[language]} classes="pt-6 phones:py-0" />
+      <Video url={videoUrl[language]} classes="pt-6 phones:py-0 phones:mt-4 phones:mx-4" />
+
+      <Videos videos={videos} />
 
     </Layout>
 
