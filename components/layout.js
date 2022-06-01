@@ -28,7 +28,7 @@ LinkedLogo.defaultProps = {
 export default function Layout({ children, home }) {
   const [showDrawer, setShowDrawer] = useState(false)
   return (
-    <div>
+    <div className="max-w-[100vw] overflow-x-hidden">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -43,9 +43,7 @@ export default function Layout({ children, home }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
-      <Countdown />
-
-      <header className="flex flex-row bg-blue-500 py-3.5 px-3.5 justify-between items-center sticky top-0 w-full z-10 md:px-8">
+      <header className="flex flex-row bg-blue-500 py-3.5 px-3.5 justify-between items-center fixed top-0 w-full z-10 md:px-8">
         {home ? (
           <h1 className="flex-1 md:flex-auto">
             <Image src={logo} alt="Vicente Sarmiento For OC Supervisor" quality={100} loading="eager" priority />
@@ -59,6 +57,8 @@ export default function Layout({ children, home }) {
         )}
         <Navigation showDrawer={showDrawer} setShowDrawer={setShowDrawer} />
       </header>
+
+      <Countdown />
 
       <NavigationDrawer showDrawer={showDrawer} />
 
