@@ -14,10 +14,20 @@ const images = {
   },
 };
 
+const video = {
+  english: 'https://www.youtube.com/embed/6zfDLJzAVGI',
+  spanish: 'https://www.youtube.com/embed/6zfDLJzAVGI',
+}
+
 export default function ReduceHomelessness() {
   return (
     <Layout>
-      <Priority priorityName={priorityName} text={reduceHomelessnessText} images={images} />
+      <Priority
+        priorityName={priorityName}
+        text={reduceHomelessnessText}
+        images={images}
+        video={video}
+      />
     </Layout>
   )
 }
