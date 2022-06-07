@@ -1,16 +1,12 @@
 import React from 'react'
 
 function Countdown() {
-  const date = new Date();
-  const day = date.getUTCDate();
+  // const date = new Date();
+  // const day = date.getUTCDate();
   return (
     <div className="flex flex-row justify-between bg-orange-500 text-white text-2xl p-4 uppercase font-bold relative max-w-[100%] mt-[99px] phones:mt-[73px] phones:flex-col">
       <div>
-        Election Day is in
-        {' '}
-        {8 - day}
-        {' '}
-        days!
+        Election Day is Today
       </div>
       <div>
         <a href="https://ocvote.gov/elections/2022-statewide-primary-election/ballot-drop-box-locations" className="underline phones:text-xl" target="_blank" rel="noreferrer">Voting Centers</a>
