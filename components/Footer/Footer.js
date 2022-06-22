@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import axios from 'axios'
 import navigationItems from '../Navigation/navigationItems'
-import Banner from '../Banner/Banner'
+// import Banner from '../Banner/Banner'
 import { useAppContext } from '../context'
 import validateEmail from '../../helpers/validation'
 import { socialText, footerText } from '../text'
@@ -40,7 +40,7 @@ export default function Footer() {
   }
   return (
     <footer className="pt-6 under-md:pt-0 under-md:-mt-[1px]">
-      <Banner />
+      {/* <Banner /> */}
       <div className="p-6 under-md:p-3">
         <div className="flex flex-row flex-wrap">
           <div className="flex-1 mb-6 w-6/12 pr-3 under-md:flex-none under-md:w-full under-md:pr-0">
