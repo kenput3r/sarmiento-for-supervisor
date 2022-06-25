@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import bannerImage from '../../images/banner.png';
+import bannerImage from '../../images/footer-banner.png';
 
 export default function Banner() {
   return (
