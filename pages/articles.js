@@ -16,8 +16,10 @@ import article9 from '../images/articles/Voice-of-OC-Rent-Control-9-22-21.jpg';
 import article10 from '../images/articles/Voice-of-OC-Vaccination-Efforts-1-29-21.jpg';
 import article11 from '../images/articles/WaPo-Health-Disparaties-3-7-22.jpg';
 import article12 from '../images/articles/Press-Releases.jpg';
+import article13 from '../images/articles/ABC-7-New-SA-Jobs.jpg';
 
 const articles = [
+  { image: article13, link: 'https://abc7.com/classic-fashion-apparel-company-hundreds-of-jobs-in-santa-ana-ribbon-cutting-ceremony-celebrating-new/12321907/' },
   { image: article1, link: 'https://correodelsur.com/sociedad/20201208_conoce-al-primer-boliviano-que-asume-como-alcalde-en-eeuu.html' },
   { image: article2, link: 'https://www.latimes.com/socal/daily-pilot/entertainment/story/2022-01-13/sarmiento?fbclid=IwAR22CvkWY79eM1TbTPH-hwSG_pUhGRbyXkYj6LVoDg4E20-Xzugn5aLWWQ0' },
   { image: article3, link: 'https://www.latimes.com/california/story/2022-03-13/california-syringe-programs-needle-access-orange-county' },
