@@ -262,6 +262,64 @@ export const updatesText = {
   updates: [
     {
       title: {
+        english:
+          'OC REGISTER - Endorsement: Vicente Sarmiento for OC Board of Supervisors',
+        spanish:
+          'OC REGISTER - Endorsement: Vicente Sarmiento for OC Board of Supervisors',
+      },
+      excerpt: {
+        english:
+          'In his run for county supervisor, Sarmiento’s top priorities are straightforward, “Reducing homelessness, creating safer neighborhoods, and improving the delivery of health care.”',
+        spanish:
+          'In his run for county supervisor, Sarmiento’s top priorities are straightforward, “Reducing homelessness, creating safer neighborhoods, and improving the delivery of health care.”',
+      },
+      link: 'https://www.ocregister.com/2022/10/10/endorsement-vicente-sarmiento-for-oc-board-of-supervisors/',
+    },
+    {
+      title: {
+        english:
+          'VOICE OF OC - OC Homelessness Policy Lands Back In Court, Santa Ana Stops Opening of County’s Walk-in Shelter',
+        spanish:
+          'VOICE OF OC - OC Homelessness Policy Lands Back In Court, Santa Ana Stops Opening of County’s Walk-in Shelter',
+      },
+      excerpt: {
+        english:
+          'City of Santa Ana officials, who oppose hosting another county-sponsored emergency refuge in a Latino and working-class city they say has for years been a homeless repository for wealthier and whiter ones in south county.',
+        spanish:
+          'City of Santa Ana officials, who oppose hosting another county-sponsored emergency refuge in a Latino and working-class city they say has for years been a homeless repository for wealthier and whiter ones in south county.',
+      },
+      link: 'https://voiceofoc.org/2022/10/oc-homelessness-policy-lands-back-in-court-santa-ana-stops-opening-of-countys-walk-in-shelter/',
+    },
+    {
+      title: {
+        english:
+          'VOICE OF OC - In Reversal, Federal Judge Allows OC’s Emergency Homeless Shelter to Proceed in Santa Ana',
+        spanish:
+          'VOICE OF OC - In Reversal, Federal Judge Allows OC’s Emergency Homeless Shelter to Proceed in Santa Ana',
+      },
+      excerpt: {
+        english:
+          'In a reversal that’s now set the timeline back for homeless people needing refuge from the rain and cold, federal judge David O. Carter ruled last Friday that a county-sponsored cold weather shelter can proceed in Santa Ana despite city officials’ objections. ',
+        spanish:
+          'In a reversal that’s now set the timeline back for homeless people needing refuge from the rain and cold, federal judge David O. Carter ruled last Friday that a county-sponsored cold weather shelter can proceed in Santa Ana despite city officials’ objections. ',
+      },
+      link: 'https://voiceofoc.org/2022/10/in-reversal-federal-judge-allows-ocs-emergency-homeless-shelter-to-proceed-in-santa-ana/',
+    },
+  ],
+}
+
+export const updatesTextOld = {
+  title: {
+    english: 'UPDATES',
+    spanish: 'Actualizaciones',
+  },
+  readMore: {
+    english: 'Read More',
+    spanish: 'Reaccionar mas',
+  },
+  updates: [
+    {
+      title: {
         english: 'Orange County Register: SANTA ANA OFFERS FREE DOWNTOWN PARKING TO HELP BUSINESSES HURT BY STREETCAR CONSTRUCTION',
         spanish: 'Orange County Register: SANTA ANA OFRECE ENSTACIONAMIENTO GRATIS EN DOWNTOWN PARA AYUDAR NEGOCIOS AFECTADOS POR LA CONSTRUCTION DEL TRANVIA',
       },
