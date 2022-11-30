@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Layout from '../components/layout'
 import { useAppContext } from '../components/context'
 import Hero from '../components/Hero/Hero'
+import PressRelease from '../components/PressRelease'
 import Priorities from '../components/Priorities/Priorities'
 import Updates from '../components/Updates/Updates'
 import Video from '../components/Video/Video'
@@ -28,6 +29,8 @@ export default function Home() {
       </Head>
 
       <Hero />
+
+      <PressRelease />
 
       <Priorities />
 
