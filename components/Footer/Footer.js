@@ -93,9 +93,9 @@ export default function Footer() {
             </p>
 
             <p className="text-right under-md:text-center">
-              &copy; Sarmiento for Supervisor
+              &copy; Sarmiento for Supervisor 2026
               {' '}
-              {`${new Date().getFullYear()}. All rights reserved.`}
+              All rights reserved.
             </p>
           </div>
         </div>
