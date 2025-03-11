@@ -183,8 +183,8 @@ export const footerText = {
   },
   disclaimers: {
     paidForBy: {
-      english: 'Paid for by Sarmiento for Supervisor 2022 FPPC ID# 1442960',
-      spanish: 'Paid for by Sarmiento for Supervisor 2022 FPPC ID# 1442960',
+      english: 'Paid for by Sarmiento for Supervisor 2026 FPPC ID# 1442960',
+      spanish: 'Paid for by Sarmiento for Supervisor 2026 FPPC ID# 1442960',
     },
     supportTheCampaign: {
       english: 'Support our supervisorial campaign to elect Vicente Sarmiento by signing up to volunteer or by making a donation online.',
