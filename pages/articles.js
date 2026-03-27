@@ -1,24 +1,24 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { FiChevronRight as Right } from 'react-icons/fi'
-import Layout from '../components/layout'
-import article1 from '../images/articles/Correro-Bolivian-Mayor-8-12-20.jpg'
-import article2 from '../images/articles/LA-Times-Candidacy-Announcement-1-13-22.jpg'
-import article4 from '../images/articles/LA-Times-Tobacco-Ban-3-2-22.jpg'
-import article5 from '../images/articles/Telemundo-$300-Stimulus-11-17-21.jpg'
-import article6 from '../images/articles/Telemundo-Tabacco-Ban-3-16-22.jpg'
-import article7 from '../images/articles/Voice-of-OC-Free-Public-Transit-2-17-22.jpg'
-import article8 from '../images/articles/Voice-of-OC-Public-Health-Dept-3-14-22.jpg'
-import article9 from '../images/articles/Voice-of-OC-Rent-Control-9-22-21.jpg'
-import article10 from '../images/articles/Voice-of-OC-Vaccination-Efforts-1-29-21.jpg'
-import article11 from '../images/articles/WaPo-Health-Disparaties-3-7-22.jpg'
-import article12 from '../images/articles/Press-Releases.jpg'
-import article13 from '../images/articles/ABC-7-New-SA-Jobs.jpg'
-import article14 from '../images/articles/emergency-homeless-shelter.jpg'
-import article15 from '../images/articles/endorsed-by-oc-register.png'
-import article16 from '../images/articles/santa-ana-stops-county-shelter.jpg'
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { FiChevronRight as Right } from 'react-icons/fi';
+import Layout from '../components/layout';
+import article1 from '../images/articles/Correro-Bolivian-Mayor-8-12-20.jpg';
+import article2 from '../images/articles/LA-Times-Candidacy-Announcement-1-13-22.jpg';
+import article4 from '../images/articles/LA-Times-Tobacco-Ban-3-2-22.jpg';
+import article5 from '../images/articles/Telemundo-$300-Stimulus-11-17-21.jpg';
+import article6 from '../images/articles/Telemundo-Tabacco-Ban-3-16-22.jpg';
+import article7 from '../images/articles/Voice-of-OC-Free-Public-Transit-2-17-22.jpg';
+import article8 from '../images/articles/Voice-of-OC-Public-Health-Dept-3-14-22.jpg';
+import article9 from '../images/articles/Voice-of-OC-Rent-Control-9-22-21.jpg';
+import article10 from '../images/articles/Voice-of-OC-Vaccination-Efforts-1-29-21.jpg';
+import article11 from '../images/articles/WaPo-Health-Disparaties-3-7-22.jpg';
+import article12 from '../images/articles/Press-Releases.jpg';
+import article13 from '../images/articles/ABC-7-New-SA-Jobs.jpg';
+import article14 from '../images/articles/emergency-homeless-shelter.jpg';
+import article15 from '../images/articles/endorsed-by-oc-register.png';
+import article16 from '../images/articles/santa-ana-stops-county-shelter.jpg';
 
 const articles = [
   {
@@ -89,13 +89,7 @@ function Articles() {
           <div className="p-3 leading-[0]" key={`${article.link}`}>
             {article.link.charAt(0) !== '/' ? (
               <a href={article.link} target="_blank" rel="noreferrer">
-                <Image
-                  src={article.image}
-                  atl={`Article ${i}`}
-                  width={320}
-                  height={320}
-                  // placeholder="blur"
-                />
+                <Image src={article.image} atl={`Article ${i}`} width={320} height={320} placeholder="blur" />
                 <div className="flex justify-between items-center font-semibold bg-orange-500 text-blue-500 p-3">
                   <span>Read Article</span>
                   <Right />
@@ -104,13 +98,7 @@ function Articles() {
             ) : (
               <Link href={article.link}>
                 <a>
-                  <Image
-                    src={article.image}
-                    atl={`Article ${i}`}
-                    width={320}
-                    height={320}
-                    // placeholder="blur"
-                  />
+                  <Image src={article.image} atl={`Article ${i}`} width={320} height={320} placeholder="blur" />
                   <div className="flex justify-between items-center font-semibold bg-orange-500 text-blue-500 p-3">
                     <span>Read Article</span>
                     <Right />
@@ -125,4 +113,4 @@ function Articles() {
   )
 }
 
-export default Articles
+export default Articles;
