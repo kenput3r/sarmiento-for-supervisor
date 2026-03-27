@@ -25,7 +25,7 @@ export default function Footer() {
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
 
-  const submit = async e => {
+  const submit = async (e) => {
     e.preventDefault()
     if (validateEmail(email) && phone.length >= 10) {
       const data = {
@@ -56,7 +56,7 @@ export default function Footer() {
                   type="email"
                   id="FooterEmailAddress"
                   name="email"
-                  onChange={e => setEmail(e.target.value)}
+                  onChange={(e) => setEmail(e.target.value)}
                   value={email}
                 />
               </label>
@@ -67,7 +67,7 @@ export default function Footer() {
                   type="tel"
                   id="Phone"
                   name="Phone"
-                  onChange={e => setPhone(e.target.value)}
+                  onChange={(e) => setPhone(e.target.value)}
                   value={phone}
                 />
               </label>
@@ -75,7 +75,7 @@ export default function Footer() {
                 <button
                   className="inline-block bg-blue-500 text-white py-2 px-3 border border-solid border-blue-500 w-full"
                   type="button"
-                  onClick={e => submit(e)}
+                  onClick={(e) => submit(e)}
                 >
                   Join Us
                 </button>
@@ -84,7 +84,7 @@ export default function Footer() {
 
             <nav>
               <ul className="columns-2 w-[300px]">
-                {navigationItems.map(item => (
+                {navigationItems.map((item) => (
                   <li className="text-blue-500" key={item.path}>
                     {item.path.charAt(0) === '/' ? (
                       <Link href={item.path}>{item.text[language]}</Link>
@@ -101,7 +101,7 @@ export default function Footer() {
 
           <div className="flex-1 mb-6 text-xs w-6/12 pl-3 under-md:flex-none under-md:w-full under-md:pl-0">
             <ul className="flex flex-row justify-end under-md:justify-center">
-              {socialText.map(social => (
+              {socialText.map((social) => (
                 <li className="ml-3" key={social.network}>
                   <a
                     className="block p-3"
