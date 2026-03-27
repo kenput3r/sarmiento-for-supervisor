@@ -30,7 +30,14 @@ export default function Priority({
 
         <section className="bg-orange-500 text-white p-6">
           <p className="text-center mb-3">
-            <Image src={quote} alt='"' width={75} height={59} />
+            {/* <Image src={quote} alt='"' width={75} height={59} /> */}
+            <img
+              src={quote.src}
+              alt='"'
+              width={75}
+              height={59}
+              style={{ display: 'block', margin: '0 auto' }}
+            />
           </p>
           <p>{text.paragraph[language]}</p>
         </section>
