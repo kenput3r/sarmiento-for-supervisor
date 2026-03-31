@@ -6,7 +6,7 @@ import Link from 'next/link'
 import Navigation from './Navigation/Navigation'
 import NavigationDrawer from './Navigation/NavigationDrawer'
 import Footer from './Footer/Footer'
-// import Countdown from './Countdown/Countdown'
+import Countdown from './Countdown/Countdown'
 import logo from '../images/sarmiento-for-oc-supervisor.svg'
 
 const LinkedLogo = React.forwardRef(({ onClick, href }, ref) => (
@@ -58,11 +58,11 @@ export default function Layout({ children, home }) {
         <Navigation showDrawer={showDrawer} setShowDrawer={setShowDrawer} />
       </header>
 
-      {/* <Countdown /> */}
+      <Countdown />
 
       <NavigationDrawer showDrawer={showDrawer} />
 
-      <main className="mt-[99px] phones:mt-[73px]">{children}</main>
+      <main>{children}</main>
 
       <Footer />
     </div>
