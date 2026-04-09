@@ -44,10 +44,16 @@ export default function Contact() {
               className='bg-gray-50'
               name='contact'
               method='POST'
+              action='/__forms.html'
               data-netlify='true'
               data-netlify-honeypot='bot-field'
             >
               <input type='hidden' name='form-name' value='contact' />
+              <p hidden>
+                <label>
+                  Don&apos;t fill this out: <input name='bot-field' />
+                </label>
+              </p>
               <div className='shadow overflow-hidden sm:rounded-md'>
                 <div className='px-4 py-5 sm:p-6'>
                   <div className='grid grid-cols-6 gap-6'>

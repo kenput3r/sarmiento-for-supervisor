@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Netlify Forms Detection</title>
+  </head>
+  <body>
+    <form
+      name="contact"
+      method="POST"
+      action="/__forms.html"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="text" name="bot-field" />
+      <input type="text" name="first-name" />
+      <input type="text" name="last-name" />
+      <input type="text" name="email-address" />
+      <input type="tel" name="phone-number" />
+      <input type="text" name="street-address" />
+      <input type="text" name="city" />
+      <input type="text" name="region" />
+      <input type="text" name="postal-code" />
+      <textarea name="message"></textarea>
+      <input type="checkbox" name="emails" />
+      <input type="checkbox" name="yardsign" />
+      <input type="checkbox" name="donate" />
+    </form>
+
+    <form
+      name="yard-sign"
+      method="POST"
+      action="/__forms.html"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="hidden" name="form-name" value="yard-sign" />
+      <input type="text" name="bot-field" />
+      <input type="text" name="first-name" />
+      <input type="text" name="last-name" />
+      <input type="text" name="email-address" />
+      <input type="tel" name="phone-number" />
+      <input type="text" name="street-address" />
+      <input type="text" name="city" />
+      <input type="text" name="region" />
+      <input type="text" name="postal-code" />
+      <input type="radio" name="sign-type" value="lawn" />
+      <input type="radio" name="sign-type" value="window" />
+    </form>
+  </body>
+</html>
