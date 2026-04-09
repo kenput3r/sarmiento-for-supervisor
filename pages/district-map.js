@@ -29,8 +29,6 @@ export default function DistrictMap() {
         <Image
           src={districtMap}
           alt='Second District, County Of Orange, California'
-          width={1200}
-          height={800}
           placeholder='blur'
         />
       </div>
