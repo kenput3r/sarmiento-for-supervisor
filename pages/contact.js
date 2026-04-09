@@ -10,6 +10,40 @@ import { contactText as text } from '../components/text'
 export default function Contact() {
   const { language } = useAppContext()
   const [addressRequired, setAddressRequired] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitMessage, setSubmitMessage] = useState('')
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    setIsSubmitting(true)
+    setSubmitMessage('')
+
+    const form = event.currentTarget
+    const formData = new FormData(form)
+
+    try {
+      const response = await fetch('/__forms.html', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams(formData).toString(),
+      })
+
+      if (!response.ok) {
+        throw new Error('Request failed')
+      }
+
+      form.reset()
+      setAddressRequired(false)
+      setSubmitMessage('Thanks! Your message has been submitted.')
+    } catch (error) {
+      setSubmitMessage('Sorry, there was an error submitting your message.')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <Layout>
       <Head>
@@ -47,6 +81,7 @@ export default function Contact() {
               action='/__forms.html'
               data-netlify='true'
               data-netlify-honeypot='bot-field'
+              onSubmit={handleSubmit}
             >
               <input type='hidden' name='form-name' value='contact' />
               <p hidden>
@@ -303,11 +338,17 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className='px-4 py-3 bg-gray-50 text-right sm:px-6'>
+                  {submitMessage && (
+                    <p className='mb-3 text-left text-sm text-blue-500'>
+                      {submitMessage}
+                    </p>
+                  )}
                   <button
                     type='submit'
+                    disabled={isSubmitting}
                     className='inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500'
                   >
-                    {text.submit[language]}
+                    {isSubmitting ? 'Submitting...' : text.submit[language]}
                   </button>
                 </div>
               </div>
