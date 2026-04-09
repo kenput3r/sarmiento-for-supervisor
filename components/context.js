@@ -17,7 +17,7 @@ export function AppWrapper({ children }) {
     if (router.query.language && router.query.language === 'spanish') {
       setLanguage('spanish')
     }
-  })
+  }, [router.query.language])
 
   return (
     <AppContext.Provider value={memoizedState}>

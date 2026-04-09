@@ -19,7 +19,7 @@ async function checkForContact(email) {
     }
     return { exists: false }
   } catch (e) {
-    throw (new Error({ error: e.message }))
+    throw new Error({ error: e.message })
   }
 }
 
@@ -52,7 +52,7 @@ async function createContact(contact) {
 
     return response.data
   } catch (e) {
-    throw (new Error(e.message))
+    throw new Error(e.message)
   }
 }
 
@@ -70,8 +70,6 @@ async function updateContact(previousInfo, newInfo) {
     prevInfo.cell_phone = newInfo.phone
   }
 
-  console.log(prevInfo)
-
   try {
     const response = await axios(url, {
       method: 'PUT',
@@ -80,7 +78,7 @@ async function updateContact(previousInfo, newInfo) {
     })
     return response.data
   } catch (e) {
-    throw (new Error(e.message))
+    throw new Error(e.message)
   }
 }
 

@@ -50,9 +50,9 @@ export default function RequestYardSign() {
             >
               <input type='hidden' name='form-name' value='yard-sign' />
               <p hidden>
-                <label>
-                  Don&apos;t fill this out: <input name='bot-field' />
-                </label>
+                {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+                <label htmlFor='bot-field'>Don&apos;t fill this out:</label>
+                <input id='bot-field' name='bot-field' />
               </p>
               <div className='shadow overflow-hidden sm:rounded-md'>
                 <div className='px-4 py-5 sm:p-6'>
