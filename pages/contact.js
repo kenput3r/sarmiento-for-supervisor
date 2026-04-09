@@ -1,6 +1,8 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
 import Layout from '../components/layout'
 import { useAppContext } from '../components/context'
 import { contactText as text } from '../components/text'
@@ -276,7 +278,33 @@ export default function Contact() {
                       updates, event invitations, donation asks, and voting
                       reminders. Messages may include donation asks. Message and
                       data rates may apply. Text HELP for more information. Text
-                      STOP to stop receiving messages. Terms and Privacy Policy.
+                      STOP to stop receiving messages.{' '}
+                      <Link
+                        href='/mobile-terms'
+                        className='text-blue-500 underline'
+                        passHref
+                      >
+                        <a
+                          rel='noopener noreferrer'
+                          className='text-blue-500 underline'
+                        >
+                          Terms
+                        </a>
+                      </Link>{' '}
+                      and{' '}
+                      <Link
+                        href='/privacy-policy'
+                        className='text-blue-500 underline'
+                        passHref
+                      >
+                        <a
+                          rel='noopener noreferrer'
+                          className='text-blue-500 underline'
+                        >
+                          Privacy Policy
+                        </a>
+                      </Link>
+                      .
                     </p>
                   </div>
                 </div>

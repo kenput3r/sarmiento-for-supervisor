@@ -48,15 +48,15 @@ const lines = [
 function PrivacyPolicy() {
   return (
     <Layout>
-      <h1 className="font-bold text-center text-xl pt-10 pb-6 uppercase">
+      <h1 className='font-bold text-center text-xl pt-10 pb-6'>
         Privacy Policy
       </h1>
-      <div className="flex flex-row flex-wrap mx-auto max-w-6xl">
+      <div className='flex flex-row flex-wrap mx-auto max-w-6xl'>
         {lines.map((el) => {
           if (el.type === 'title') {
             return (
               <h2
-                className="font-bold text-lg p-3 uppercase"
+                className='font-bold text-lg p-3 uppercase'
                 key={`${el.type}-${el.text.slice(0, 10)}`}
               >
                 {el.text}
@@ -66,7 +66,7 @@ function PrivacyPolicy() {
 
           return (
             <p
-              className="p-3 text-lg"
+              className='p-3 text-lg'
               key={`${el.type}-${el.text.slice(0, 10)}`}
             >
               {el.text}

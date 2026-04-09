@@ -6,7 +6,7 @@ import Layout from '../components/layout'
 function MobileTerms() {
   return (
     <Layout>
-      <h1 className='font-bold text-center text-xl pt-10 pb-6 uppercase'>
+      <h1 className='font-bold text-center text-xl pt-10 pb-6'>
         Mobile Terms of Service
       </h1>
       <div className='flex flex-row flex-wrap mx-auto max-w-6xl'>
