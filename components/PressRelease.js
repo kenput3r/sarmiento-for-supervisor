@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import Image from 'next/image'
-import logo from '../images/for-supervisor-primary_blue.png'
 
 function PressRelease() {
   const [showFullText, setShowFullText] = useState(false)
@@ -8,7 +6,11 @@ function PressRelease() {
   return (
     <div className="w-[1024px] max-w-full mx-auto px-4 pb-8 my-8 border-b phones:px-1">
       <div className="text-center mb-8 max-w-full w-[480px] mx-auto">
-        <Image src={logo} alt="Vicente Sarmiento" />
+        <img
+          src='/images/for-supervisor-primary_blue.png'
+          alt='Vicente Sarmiento'
+          style={{ maxWidth: '100%', height: 'auto' }}
+        />
       </div>
 
       <div className="mb-8">
