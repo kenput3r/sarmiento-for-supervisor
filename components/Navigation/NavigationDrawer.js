@@ -13,6 +13,7 @@ import donate from '../../images/donate.svg'
 import contact from '../../images/meet.svg'
 import endorsement from '../../images/endorsements.svg'
 import map from '../../images/map.svg'
+import terms from '../../images/volunteer.svg'
 
 const anchorClasses =
   'block p-2 flex-1 flex justify-end items-center font-bold text-2xl'
@@ -25,6 +26,7 @@ const icons = {
   contact,
   endorsement,
   map,
+  terms,
 }
 
 export default function NavigationDrawer({ classes = '', showDrawer }) {

@@ -84,6 +84,26 @@ const navigationItems = [
     secondary: true,
     icon: 'map',
   },
+  {
+    text: {
+      english: 'Terms',
+      spanish: 'Términos',
+    },
+    path: '/terms',
+    primary: false,
+    secondary: true,
+    icon: 'terms',
+  },
+  {
+    text: {
+      english: 'Privacy Policy',
+      spanish: 'Política de Privacidad',
+    },
+    path: '/privacy-policy',
+    primary: false,
+    secondary: true,
+    icon: 'terms',
+  },
 ]
 
 export default navigationItems
