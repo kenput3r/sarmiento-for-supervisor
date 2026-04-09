@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import Image from 'next/image'
 import { useAppContext } from '../context'
 import { heroText, contactText } from '../text'
 import validateEmail from '../../helpers/validation'
 import styles from './Hero.module.css'
+import heroImage from '../../images/hero.jpg'
+import orangeGroves from '../../images/orange-groves.svg'
 
 export default function Hero() {
   const { language } = useAppContext()
@@ -49,23 +52,21 @@ export default function Hero() {
   return (
     <section className='relative'>
       <div className='w-full 2xl:h-screen'>
-        {/* <Image
-          src={hero}
-          alt="Vicente Sarmiento"
-          layout="responsive"
-          loading="eager"
-          priority
-        /> */}
-        <img
-          src='/images/hero.jpg'
+        <Image
+          src={heroImage}
           alt='Vicente Sarmiento'
+          width={1920}
+          height={1080}
+          priority
           style={{ width: '100%', height: 'auto', display: 'block' }}
         />
       </div>
       <div className='xl:-mt-60 lg:-mt-36 md:-mt-28 phones:-mt-16'>
-        <img
-          src='/images/orange-groves.svg'
+        <Image
+          src={orangeGroves}
           alt='orange groves'
+          width={1920}
+          height={260}
           style={{ width: '100%', height: 'auto', display: 'block' }}
         />
       </div>

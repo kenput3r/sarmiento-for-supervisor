@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import axios from 'axios'
 import navigationItems from '../Navigation/navigationItems'
@@ -6,13 +7,18 @@ import navigationItems from '../Navigation/navigationItems'
 import { useAppContext } from '../context'
 import validateEmail from '../../helpers/validation'
 import { socialText, footerText } from '../text'
+import facebookIcon from '../../images/facebook.png'
+import instagramIcon from '../../images/instagram.png'
+import twitterIcon from '../../images/twitter.png'
+import youtubeIcon from '../../images/icon-youtube_small.png'
+import emailIcon from '../../images/email.png'
 
 const icons = {
-  Facebook: '/images/facebook.png',
-  Instagram: '/images/instagram.png',
-  Twitter: '/images/twitter.png',
-  YouTube: '/images/icon-youtube_small.png',
-  Email: '/images/email.png',
+  Facebook: facebookIcon,
+  Instagram: instagramIcon,
+  Twitter: twitterIcon,
+  YouTube: youtubeIcon,
+  Email: emailIcon,
 }
 
 export default function Footer() {
@@ -104,10 +110,12 @@ export default function Footer() {
                     target='_blank'
                     rel='noreferrer'
                   >
-                    <img
+                    <Image
                       className='h-6'
                       src={icons[social.network]}
                       alt={social.network}
+                      width={24}
+                      height={24}
                     />
                   </a>
                 </li>

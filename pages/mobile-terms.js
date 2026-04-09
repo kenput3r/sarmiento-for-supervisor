@@ -42,14 +42,8 @@ function MobileTerms() {
         <p className='p-3 text-lg'>
           If you have any questions regarding privacy, please read our privacy
           policy:{' '}
-          <Link
-            href='/privacy-policy'
-            className='text-blue-500 underline'
-            passHref
-          >
-            <a rel='noopener noreferrer' className='text-blue-500 underline'>
-              Privacy Policy
-            </a>
+          <Link href='/privacy-policy' className='text-blue-500 underline'>
+            Privacy Policy
           </Link>
           .
         </p>

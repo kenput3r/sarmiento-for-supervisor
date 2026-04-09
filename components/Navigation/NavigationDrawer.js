@@ -14,7 +14,8 @@ import contact from '../../images/meet.svg'
 import endorsement from '../../images/endorsements.svg'
 import map from '../../images/map.svg'
 
-const anchorClasses = 'block p-2 flex-1 flex justify-end items-center font-bold text-2xl'
+const anchorClasses =
+  'block p-2 flex-1 flex justify-end items-center font-bold text-2xl'
 const itemClasses = 'flex flex-row m-4'
 
 const icons = {
@@ -26,33 +27,47 @@ const icons = {
   map,
 }
 
-export default function NavigationDrawer({ classes, showDrawer }) {
+export default function NavigationDrawer({ classes = '', showDrawer }) {
   const { language } = useAppContext()
   const router = useRouter()
   return (
-    <nav className={`flex flex-col bg-gray-50 text-blue-500 h-screen fixed top-0 right-0 pt-28 z-[9] transition-transform ${classes} ${showDrawer ? 'translate-x-0' : 'translate-x-full'}`}>
-      <ul className="">
+    <nav
+      className={`flex flex-col bg-gray-50 text-blue-500 h-screen fixed top-0 right-0 pt-28 z-[9] transition-transform ${classes} ${showDrawer ? 'translate-x-0' : 'translate-x-full'}`}
+    >
+      <ul className=''>
         {navigationItems.map((item) => {
           if (item.secondary) {
             if (item.path.charAt(0) === '/') {
               return (
                 <li className={itemClasses} key={item.path}>
-                  <Link href={item.path}>
-                    <a className={`${router.pathname === item.path ? 'underline' : ''} ${anchorClasses}`}>
-                      <span className="mr-4">{item.text[language]}</span>
-                      {' '}
-                      <Image src={icons[item.icon]} alt={item.text[language]} className="rounded-full" />
-                    </a>
+                  <Link
+                    href={item.path}
+                    className={`${router.pathname === item.path ? 'underline' : ''} ${anchorClasses}`}
+                  >
+                    <span className='mr-4'>{item.text[language]}</span>{' '}
+                    <Image
+                      src={icons[item.icon]}
+                      alt={item.text[language]}
+                      className='rounded-full'
+                    />
                   </Link>
                 </li>
               )
             }
             return (
               <li className={itemClasses} key={item.path}>
-                <a className={`p-2 ${anchorClasses}`} href={item.path} target="_blank" rel="noreferrer">
-                  <span className="mr-4">{item.text[language]}</span>
-                  {' '}
-                  <Image src={icons[item.icon]} alt={item.text[language]} className="rounded-full" />
+                <a
+                  className={`p-2 ${anchorClasses}`}
+                  href={item.path}
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  <span className='mr-4'>{item.text[language]}</span>{' '}
+                  <Image
+                    src={icons[item.icon]}
+                    alt={item.text[language]}
+                    className='rounded-full'
+                  />
                 </a>
               </li>
             )
@@ -67,8 +82,4 @@ export default function NavigationDrawer({ classes, showDrawer }) {
 NavigationDrawer.propTypes = {
   classes: PropTypes.string,
   showDrawer: PropTypes.bool.isRequired,
-}
-
-NavigationDrawer.defaultProps = {
-  classes: '',
 }

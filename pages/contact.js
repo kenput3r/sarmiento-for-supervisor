@@ -282,27 +282,15 @@ export default function Contact() {
                       <Link
                         href='/mobile-terms'
                         className='text-blue-500 underline'
-                        passHref
                       >
-                        <a
-                          rel='noopener noreferrer'
-                          className='text-blue-500 underline'
-                        >
-                          Terms
-                        </a>
+                        Terms
                       </Link>{' '}
                       and{' '}
                       <Link
                         href='/privacy-policy'
                         className='text-blue-500 underline'
-                        passHref
                       >
-                        <a
-                          rel='noopener noreferrer'
-                          className='text-blue-500 underline'
-                        >
-                          Privacy Policy
-                        </a>
+                        Privacy Policy
                       </Link>
                       .
                     </p>

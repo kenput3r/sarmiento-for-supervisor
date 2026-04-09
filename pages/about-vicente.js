@@ -1,9 +1,10 @@
 import React from 'react'
 import Head from 'next/head'
-// import Image from 'next/image'
+import Image from 'next/image'
 import Layout from '../components/layout'
 import { aboutVicenteText } from '../components/text'
 import { useAppContext } from '../components/context'
+import aboutVicenteSarmiento from '../images/about-vicente-sarmiento.jpg'
 
 export default function AboutVicente() {
   const { language } = useAppContext()
@@ -38,15 +39,11 @@ export default function AboutVicente() {
         <link rel='icon' href='/favicon.png' />
       </Head>
       <div className='grid grid-cols-1 grid-container place-items-center place-content-center w-full'>
-        {/* <Image
+        <Image
           src={aboutVicenteSarmiento}
           alt='Vicente and the Sarmiento family.'
-          layout='intrinsic'
-          placeholder='blur'
-        /> */}
-        <img
-          src='/images/about-vicente-sarmiento.jpg'
-          alt='Vicente and the Sarmiento family.'
+          width={1200}
+          height={800}
           style={{ maxWidth: '100%', height: 'auto', display: 'block' }}
         />
         <div className='z-[1] text-white text-center p-1.5 phones:bg-orange-500'>

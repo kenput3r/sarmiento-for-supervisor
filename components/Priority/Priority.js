@@ -4,8 +4,17 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useAppContext } from '../context'
 import Video from '../Video/Video'
+import quoteImage from '../../images/quote.png'
 
-export default function Priority({ priorityName, text, images, video }) {
+export default function Priority({
+  priorityName,
+  text,
+  images,
+  video = {
+    english: false,
+    spanish: false,
+  },
+}) {
   const { language } = useAppContext()
   return (
     <>
@@ -33,9 +42,8 @@ export default function Priority({ priorityName, text, images, video }) {
 
         <section className='bg-orange-500 text-white p-6'>
           <p className='text-center mb-3'>
-            {/* <Image src={quote} alt='"' width={75} height={59} /> */}
-            <img
-              src='/images/quote.png'
+            <Image
+              src={quoteImage}
               alt='"'
               width={75}
               height={59}
@@ -75,12 +83,5 @@ Priority.propTypes = {
   video: {
     english: PropTypes.string || PropTypes.bool,
     spanish: PropTypes.string || PropTypes.bool,
-  },
-}
-
-Priority.defaultProps = {
-  video: {
-    english: false,
-    spanish: false,
   },
 }
