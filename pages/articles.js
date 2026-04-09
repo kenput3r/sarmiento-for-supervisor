@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
-// import Image from 'next/image'
+import Image from 'next/image'
 import Link from 'next/link'
 import { FiChevronRight as Right } from 'react-icons/fi'
 import Layout from '../components/layout'
@@ -89,13 +89,18 @@ function Articles() {
           <div className="p-3 leading-[0]" key={`${article.link}`}>
             {article.link.charAt(0) !== '/' ? (
               <a href={article.link} target="_blank" rel="noreferrer">
-                {/* <Image src={article.image} atl={`Article ${i}`} */}
-                {/* width={320} height={320} placeholder="blur" /> */}
-                <img
+                <Image
+                  src={article.image}
+                  atl={`Article ${i}`}
+                  width={320}
+                  height={320}
+                  placeholder="blur"
+                />
+                {/* <img
                   src={article.image.src}
                   alt={`Article ${i}`}
                   style={{ width: '320px', height: '320px', display: 'block' }}
-                />
+                /> */}
                 <div className="flex justify-between items-center font-semibold bg-orange-500 text-blue-500 p-3">
                   <span>Read Article</span>
                   <Right />

@@ -52,18 +52,18 @@ export default function Hero() {
   return (
     <section className="relative">
       <div className="w-full 2xl:h-screen">
-        {/* <Image
+        <Image
           src={hero}
           alt="Vicente Sarmiento"
           layout="responsive"
           loading="eager"
           priority
-        /> */}
-        <img
+        />
+        {/* <img
           src={hero.src}
           alt="Vicente Sarmiento"
           style={{ width: '100%', height: 'auto', display: 'block' }}
-        />
+        /> */}
       </div>
       <div className="xl:-mt-60 lg:-mt-36 md:-mt-28 phones:-mt-16">
         <Image

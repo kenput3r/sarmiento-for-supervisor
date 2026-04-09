@@ -1,7 +1,9 @@
 {
-  "extends": "airbnb",
+  "extends": ["airbnb", "prettier"],
   "rules": {
     "react/jsx-filename-extension": 0,
-    "semi": 0
+    "semi": 0,
+    "object-curly-newline": 0
   }
 }
+  

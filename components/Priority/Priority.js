@@ -6,20 +6,24 @@ import { useAppContext } from '../context'
 import Video from '../Video/Video'
 import quote from '../../images/quote.png'
 
-export default function Priority({
-  priorityName, text, images, video,
-}) {
+export default function Priority({ priorityName, text, images, video }) {
   const { language } = useAppContext()
   return (
     <>
       <Head>
         <title>{`${priorityName} | Sarmiento for OC Supervisor`}</title>
-        <meta name="description" content="Vicente Sarmiento is running for Orange County Supervisor" />
+        <meta
+          name="description"
+          content="Vicente Sarmiento is running for Orange County Supervisor"
+        />
         <meta
           property="og:image"
           content="/sarmiento-headshot-watermarked.jpg"
         />
-        <meta name="og:title" content="Sarmiento For Orange County Supervisor" />
+        <meta
+          name="og:title"
+          content="Sarmiento For Orange County Supervisor"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" href="/favicon.png" />
       </Head>
@@ -30,22 +34,22 @@ export default function Priority({
 
         <section className="bg-orange-500 text-white p-6">
           <p className="text-center mb-3">
-            {/* <Image src={quote} alt='"' width={75} height={59} /> */}
-            <img
+            <Image src={quote} alt='"' width={75} height={59} />
+            {/* <img
               src={quote.src}
               alt='"'
               width={75}
               height={59}
               style={{ display: 'block', margin: '0 auto' }}
-            />
+            /> */}
           </p>
           <p>{text.paragraph[language]}</p>
         </section>
       </div>
       {video.english && video.spanish && (
-      <section>
-        <Video url={video[language]} />
-      </section>
+        <section>
+          <Video url={video[language]} />
+        </section>
       )}
     </>
   )
