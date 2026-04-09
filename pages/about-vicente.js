@@ -42,9 +42,8 @@ export default function AboutVicente() {
         <Image
           src={aboutVicenteSarmiento}
           alt='Vicente and the Sarmiento family.'
-          width={1200}
-          height={800}
-          style={{ maxWidth: '100%', height: 'auto', display: 'block' }}
+          layout='intrinsic'
+          placeholder='blur'
         />
         <div className='z-[1] text-white text-center p-1.5 phones:bg-orange-500'>
           <h2 className='text-4xl'>{text.h2[language]}</h2>

@@ -55,19 +55,17 @@ export default function Hero() {
         <Image
           src={heroImage}
           alt='Vicente Sarmiento'
-          width={1920}
-          height={1080}
-          priority
-          style={{ width: '100%', height: 'auto', display: 'block' }}
+          layout='responsive'
+          loading='eager'
+          placeholder='blur'
         />
       </div>
       <div className='xl:-mt-60 lg:-mt-36 md:-mt-28 phones:-mt-16'>
         <Image
           src={orangeGroves}
           alt='orange groves'
-          width={1920}
-          height={260}
-          style={{ width: '100%', height: 'auto', display: 'block' }}
+          layout='responsive'
+          loading='eager'
         />
       </div>
       <div className='bg-blue-500 relative p-14 w-full lg:top-10 lg:right-10 xl:top-20 xl:right-20 lg:absolute lg:bg-blue-500/75 lg:w-[500px] xl:w-[598px] lg:rounded-md phones:py-7 phones:px-3.5'>

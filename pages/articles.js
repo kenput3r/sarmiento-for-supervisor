@@ -94,7 +94,7 @@ function Articles() {
                   alt={`Article ${i}`}
                   width={320}
                   height={320}
-                  style={{ width: '320px', height: '320px', display: 'block' }}
+                  placeholder='blur'
                 />
                 <div className='flex justify-between items-center font-semibold bg-orange-500 text-blue-500 p-3'>
                   <span>Read Article</span>
@@ -108,11 +108,7 @@ function Articles() {
                   alt={`Article ${i}`}
                   width={320}
                   height={320}
-                  style={{
-                    width: '320px',
-                    height: '320px',
-                    display: 'block',
-                  }}
+                  placeholder='blur'
                 />
                 <div className='flex justify-between items-center font-semibold bg-orange-500 text-blue-500 p-3'>
                   <span>Read Article</span>

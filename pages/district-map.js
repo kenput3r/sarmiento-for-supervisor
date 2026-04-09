@@ -31,7 +31,7 @@ export default function DistrictMap() {
           alt='Second District, County Of Orange, California'
           width={1200}
           height={800}
-          style={{ width: '100%', height: 'auto' }}
+          placeholder='blur'
         />
       </div>
     </Layout>
