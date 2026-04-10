@@ -89,7 +89,7 @@ const navigationItems = [
       english: 'Terms',
       spanish: 'Términos',
     },
-    path: '/terms',
+    path: '/mobile-terms',
     primary: false,
     secondary: true,
     icon: 'terms',

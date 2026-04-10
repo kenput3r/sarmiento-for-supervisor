@@ -312,26 +312,19 @@ export default function Contact() {
                     </div>
 
                     <p className='ml-4 text-xs'>
-                      By selecting this checkbox you are agreeing to receive up
-                      to 2 text message(s) per day from Sarmiento for Supervisor
-                      FPPC ID# 1442960. Sarmiento for Supervisor FPPC ID#
-                      1442960&apos;s mobile campaigns provide subscribers with
-                      updates, event invitations, donation asks, and voting
-                      reminders. Messages may include donation asks. Message and
-                      data rates may apply. Text HELP for more information. Text
-                      STOP to stop receiving messages.{' '}
+                      {text.disclaimer[language]}{' '}
                       <Link
                         href='/mobile-terms'
                         className='text-blue-500 underline'
                       >
-                        Terms
+                        {text.terms[language]}
                       </Link>{' '}
                       and{' '}
                       <Link
                         href='/privacy-policy'
                         className='text-blue-500 underline'
                       >
-                        Privacy Policy
+                        {text.privacyPolicy[language]}
                       </Link>
                       .
                     </p>
