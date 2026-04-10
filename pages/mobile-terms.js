@@ -29,6 +29,10 @@ const text = {
       'Si tiene alguna pregunta sobre privacidad, lea nuestra política de privacidad:',
     ],
   },
+  privacyPolicy: {
+    english: 'Privacy Policy',
+    spanish: 'Política de Privacidad',
+  },
 }
 
 function MobileTerms() {
@@ -50,9 +54,7 @@ function MobileTerms() {
                   href='/privacy-policy'
                   className='underline text-blue-500'
                 >
-                  {language === 'english'
-                    ? 'Privacy Policy'
-                    : 'Política de Privacidad'}
+                  {text.privacyPolicy[language]}
                 </Link>
               </>
             )}
