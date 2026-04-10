@@ -1,5 +1,9 @@
 import React, {
-  createContext, useContext, useState, useMemo, useEffect,
+  createContext,
+  useContext,
+  useState,
+  useMemo,
+  useEffect,
 } from 'react'
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
@@ -17,12 +21,10 @@ export function AppWrapper({ children }) {
     if (router.query.language && router.query.language === 'spanish') {
       setLanguage('spanish')
     }
-  })
+  }, [router.query.language])
 
   return (
-    <AppContext.Provider value={memoizedState}>
-      {children}
-    </AppContext.Provider>
+    <AppContext.Provider value={memoizedState}>{children}</AppContext.Provider>
   )
 }
 

@@ -17,22 +17,36 @@ const toggleClasses = 'block ml-4'
 export default function Navigation({ showDrawer, setShowDrawer }) {
   const { language } = useAppContext()
   const router = useRouter()
-  const primaryNavigationItems = navigationItems.filter((item) => item.primary === true)
+  const primaryNavigationItems = navigationItems.filter(
+    (item) => item.primary === true,
+  )
   return (
-    <nav className="flex flex-[1.5] md:flex-auto justify-end">
-      <ul className="text-orange-500 font-bold uppercase flex flex-row flex-wrap items-center">
+    <nav className='flex flex-[1.5] md:flex-auto justify-end'>
+      <ul className='text-orange-500 font-bold uppercase flex flex-row flex-wrap items-center'>
         {primaryNavigationItems.map((item, index) => {
           if (index + 1 !== primaryNavigationItems.length) {
             if (item.path.charAt(0) === '/') {
               return (
                 <li className={itemClasses} key={item.path}>
-                  <Link href={item.path}><a className={`${router.pathname === item.path ? 'underline' : ''} ${item.styles} ${anchorClasses}`}>{item.text[language]}</a></Link>
+                  <Link
+                    href={item.path}
+                    className={`${router.pathname === item.path ? 'underline' : ''} ${item.styles} ${anchorClasses}`}
+                  >
+                    {item.text[language]}
+                  </Link>
                 </li>
               )
             }
             return (
               <li className={itemClasses} key={item.path}>
-                <a className={`p-2 ${item.styles} ${anchorClasses}`} href={item.path} target="_blank" rel="noreferrer">{item.text[language]}</a>
+                <a
+                  className={`p-2 ${item.styles} ${anchorClasses}`}
+                  href={item.path}
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  {item.text[language]}
+                </a>
               </li>
             )
           }
@@ -43,8 +57,11 @@ export default function Navigation({ showDrawer, setShowDrawer }) {
                   <LanguageToggle classes={anchorClasses} />
                 </li>
                 <li className={itemClasses}>
-                  <Link href={item.path}>
-                    <a className={`${router.pathname === item.path ? 'underline' : ''} ${item.styles} ${anchorClasses}`}>{item.text[language]}</a>
+                  <Link
+                    href={item.path}
+                    className={`${router.pathname === item.path ? 'underline' : ''} ${item.styles} ${anchorClasses}`}
+                  >
+                    {item.text[language]}
                   </Link>
                 </li>
               </React.Fragment>
@@ -56,13 +73,24 @@ export default function Navigation({ showDrawer, setShowDrawer }) {
                 <LanguageToggle classes={anchorClasses} />
               </li>
               <li className={itemClasses}>
-                <a className={`${item.styles} ${anchorClasses}`} href={item.path} target="_blank" rel="noreferrer">{item.text[language]}</a>
+                <a
+                  className={`${item.styles} ${anchorClasses}`}
+                  href={item.path}
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  {item.text[language]}
+                </a>
               </li>
             </React.Fragment>
           )
         })}
         <li className={toggleClasses}>
-          <button type="button" className={`${styles.burger} ${showDrawer ? styles.open : ''}`} onClick={() => setShowDrawer(!showDrawer)}>
+          <button
+            type='button'
+            className={`${styles.burger} ${showDrawer ? styles.open : ''}`}
+            onClick={() => setShowDrawer(!showDrawer)}
+          >
             <div />
             <div />
             <div />

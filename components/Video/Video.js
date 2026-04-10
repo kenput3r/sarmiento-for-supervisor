@@ -1,19 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default function Video({ url, classes }) {
+export default function Video({ url, classes = '' }) {
   return (
     <section className={classes}>
-      <div className="max-w-screen-lg mx-auto">
-        <div className="relative h-0 my-4 pb-fluid-video phones:my-0">
+      <div className='max-w-screen-lg mx-auto'>
+        <div className='relative h-0 my-4 pb-fluid-video phones:my-0'>
           <iframe
-            className="absolute top-0 left-0 w-full h-full"
-            width="560"
-            height="315"
+            className='absolute top-0 left-0 w-full h-full'
+            width='560'
+            height='315'
             src={`${url}?rel=0`}
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            title='YouTube video player'
+            frameBorder='0'
+            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
             allowFullScreen
           />
         </div>
@@ -25,8 +25,4 @@ export default function Video({ url, classes }) {
 Video.propTypes = {
   url: PropTypes.string.isRequired,
   classes: PropTypes.string,
-}
-
-Video.defaultProps = {
-  classes: '',
 }

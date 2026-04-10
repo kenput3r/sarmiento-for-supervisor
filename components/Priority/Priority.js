@@ -4,35 +4,46 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useAppContext } from '../context'
 import Video from '../Video/Video'
-import quote from '../../images/quote.png'
+import quoteImage from '../../images/quote.png'
 
 export default function Priority({
-  priorityName, text, images, video,
+  priorityName,
+  text,
+  images,
+  video = {
+    english: false,
+    spanish: false,
+  },
 }) {
   const { language } = useAppContext()
   return (
     <>
       <Head>
         <title>{`${priorityName} | Sarmiento for OC Supervisor`}</title>
-        <meta name="description" content="Vicente Sarmiento is running for Orange County Supervisor" />
         <meta
-          property="og:image"
-          content="/sarmiento-headshot-watermarked.jpg"
+          name='description'
+          content='Vicente Sarmiento is running for Orange County Supervisor'
         />
-        <meta name="og:title" content="Sarmiento For Orange County Supervisor" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <link rel="icon" href="/favicon.png" />
+        <meta
+          property='og:image'
+          content='/sarmiento-headshot-watermarked.jpg'
+        />
+        <meta
+          name='og:title'
+          content='Sarmiento For Orange County Supervisor'
+        />
+        <meta name='twitter:card' content='summary_large_image' />
+        <link rel='icon' href='/favicon.png' />
       </Head>
-      <div className="mt-10 pt-6 under-md:pt-0 sm:mt-4 under-md:mt-0 max-w-lg mx-auto">
-        <h1 className="text-center">
+      <div className='mt-10 pt-6 under-md:pt-0 sm:mt-4 under-md:mt-0 max-w-lg mx-auto'>
+        <h1 className='text-center'>
           <Image src={images.heading[language]} alt={text.title[language]} />
         </h1>
 
-        <section className="bg-orange-500 text-white p-6">
-          <p className="text-center mb-3">
-            {/* <Image src={quote} alt='"' width={75} height={59} /> */}
-            <img
-              src={quote.src}
+        <section className='bg-orange-500 text-white p-6'>
+          <p className='text-center mb-3'>
+            <Image
+              src={quoteImage}
               alt='"'
               width={75}
               height={59}
@@ -43,9 +54,9 @@ export default function Priority({
         </section>
       </div>
       {video.english && video.spanish && (
-      <section>
-        <Video url={video[language]} />
-      </section>
+        <section>
+          <Video url={video[language]} />
+        </section>
       )}
     </>
   )
@@ -72,12 +83,5 @@ Priority.propTypes = {
   video: {
     english: PropTypes.string || PropTypes.bool,
     spanish: PropTypes.string || PropTypes.bool,
-  },
-}
-
-Priority.defaultProps = {
-  video: {
-    english: false,
-    spanish: false,
   },
 }
