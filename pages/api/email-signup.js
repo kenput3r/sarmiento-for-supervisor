@@ -116,8 +116,7 @@ async function getAccessToken() {
   return data.access_token
 }
 
-async function checkForContact(email) {
-  const accessToken = await getAccessToken()
+async function checkForContact(email, accessToken) {
   const url = `https://api.cc.email/v3/contacts?email=${encodeURIComponent(email)}`
   try {
     const response = await axios(url, {
@@ -144,10 +143,7 @@ async function checkForContact(email) {
   }
 }
 
-async function createContact(contact) {
-  // 1. Get your fresh access token using the logic we discussed earlier
-  const accessToken = await getAccessToken()
-
+async function createContact(contact, accessToken) {
   const url = 'https://api.cc.email/v3/contacts'
 
   // 2. V3 uses a different data structure
@@ -197,9 +193,7 @@ async function createContact(contact) {
   }
 }
 
-async function updateContact(previousInfo, newInfo) {
-  const accessToken = await getAccessToken() // Your logic from before
-
+async function updateContact(previousInfo, newInfo, accessToken) {
   // 1. In V3, the contact object is usually at previousInfo directly
   // or returned from a GET call.
   const contact = previousInfo
@@ -296,17 +290,22 @@ export default async function handler(req, res) {
   try {
     assertRequiredEnvVars()
 
+    const accessToken = await getAccessToken()
     const contact = req.body.data
-    const previousContact = await checkForContact(contact.email)
+    const previousContact = await checkForContact(contact.email, accessToken)
 
     if (!previousContact.exists) {
-      const newContact = await createContact(contact)
+      const newContact = await createContact(contact, accessToken)
       res.status(200).json({ data: newContact })
       return
     }
 
     const previousInfo = previousContact.data.contacts[0] // Adjusted for V3 response structure
-    const updatedContact = await updateContact(previousInfo, contact)
+    const updatedContact = await updateContact(
+      previousInfo,
+      contact,
+      accessToken,
+    )
     res.status(200).json({ data: updatedContact })
   } catch (error) {
     const status = error.status || 500
