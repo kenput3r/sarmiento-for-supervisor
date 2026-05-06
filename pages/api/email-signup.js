@@ -3,6 +3,31 @@ import 'dotenv/config'
 
 const DEBUG = true
 
+function assertRequiredEnvVars() {
+  const requiredVars = [
+    'CONSTANT_CONTACT_CLIENT_ID',
+    'CONSTANT_CONTACT_CLIENT_SECRET',
+    'CONSTANT_CONTACT_REFRESH_TOKEN',
+    'LIST_ID',
+  ]
+
+  const missingVars = requiredVars.filter((key) => {
+    const value = process.env[key]
+    return !value || value.trim().length === 0
+  })
+
+  if (missingVars.length > 0) {
+    const error = new Error(
+      `Missing required environment variables: ${missingVars.join(', ')}`,
+    )
+    error.status = 500
+    error.details = {
+      missingEnvVars: missingVars,
+    }
+    throw error
+  }
+}
+
 function buildRouteError(error, fallbackMessage) {
   const status = error.response?.status || 500
   const details = error.response?.data || null
@@ -37,10 +62,57 @@ async function getAccessToken() {
     },
   )
 
-  const data = await response.json()
+  const rawBody = await response.text()
+  let data = null
+
+  if (rawBody) {
+    try {
+      data = JSON.parse(rawBody)
+    } catch {
+      const error = new Error('Token endpoint returned a non-JSON response')
+      error.status = 502
+      error.details = {
+        tokenStatus: response.status,
+        tokenStatusText: response.statusText,
+        tokenContentType: response.headers.get('content-type'),
+        rawBody,
+      }
+      throw error
+    }
+  }
+
+  if (!response.ok) {
+    const error = new Error(
+      data?.error_description ||
+        data?.error ||
+        'Failed to fetch Constant Contact access token',
+    )
+    error.status = response.status
+    error.details = data || {
+      tokenStatus: response.status,
+      tokenStatusText: response.statusText,
+      rawBody,
+    }
+    throw error
+  }
+
+  if (!data?.access_token) {
+    const error = new Error(
+      'Token endpoint response did not include access_token',
+    )
+    error.status = 502
+    error.details = data || {
+      tokenStatus: response.status,
+      tokenStatusText: response.statusText,
+      rawBody,
+    }
+    throw error
+  }
+
   if (DEBUG) {
     console.log('Access Token Response:', JSON.stringify(data, null, 2))
   }
+
   return data.access_token
 }
 
@@ -222,6 +294,8 @@ previousContact.data structure (from GET):
 
 export default async function handler(req, res) {
   try {
+    assertRequiredEnvVars()
+
     const contact = req.body.data
     const previousContact = await checkForContact(contact.email)
 

@@ -21,26 +21,46 @@ const icons = {
   Email: emailIcon,
 }
 
+function getApiErrorMessage(error, fallbackMessage) {
+  return (
+    error?.response?.data?.error ||
+    error?.response?.data?.details?.[0]?.error_message ||
+    error?.message ||
+    fallbackMessage
+  )
+}
+
 export default function Footer() {
   const { language } = useAppContext()
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
+  const [formMessage, setFormMessage] = useState('')
 
   const submit = async (e) => {
     e.preventDefault()
+    setFormMessage('')
+
     if (validateEmail(email) && phone.length >= 10) {
       const data = {
         email,
         phone,
       }
-      const res = await axios.post('/api/email-signup', { data })
-      if (res) {
-        setEmail('')
-        setPhone('')
-      } else {
-        setEmail('')
-        setPhone('')
+
+      try {
+        const res = await axios.post('/api/email-signup', { data })
+        if (res) {
+          setFormMessage('Signup successful.')
+          setEmail('')
+          setPhone('')
+        } else {
+          setEmail('')
+          setPhone('')
+        }
+      } catch (error) {
+        setFormMessage(getApiErrorMessage(error, 'Signup failed.'))
       }
+    } else {
+      setFormMessage('Please enter a valid email and phone number.')
     }
   }
   return (
@@ -81,6 +101,11 @@ export default function Footer() {
                   Join Us
                 </button>
               </div>
+              {formMessage && (
+                <p className='mt-2 text-sm text-red-700 break-words'>
+                  {formMessage}
+                </p>
+              )}
             </form>
 
             <nav>

@@ -8,6 +8,15 @@ import styles from './Hero.module.css'
 import heroImage from '../../images/hero.jpg'
 import orangeGroves from '../../images/orange-groves.svg'
 
+function getApiErrorMessage(error, fallbackMessage) {
+  return (
+    error?.response?.data?.error ||
+    error?.response?.data?.details?.[0]?.error_message ||
+    error?.message ||
+    fallbackMessage
+  )
+}
+
 export default function Hero() {
   const { language } = useAppContext()
   const [fName, setFName] = useState('')
@@ -43,10 +52,13 @@ export default function Hero() {
         setLName('')
         return res
       } catch (error) {
-        handleResponse(heroText.errorMessage[language])
+        handleResponse(
+          getApiErrorMessage(error, heroText.errorMessage[language]),
+        )
         return error
       }
     }
+    setIsLoading(false)
     return {}
   }
   return (
