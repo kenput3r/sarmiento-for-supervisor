@@ -1,6 +1,24 @@
 import axios from 'axios'
 import 'dotenv/config'
 
+const DEBUG = true
+
+function buildRouteError(error, fallbackMessage) {
+  const status = error.response?.status || 500
+  const details = error.response?.data || null
+  const message =
+    error.response?.data?.[0]?.error_message ||
+    error.response?.data?.error_message ||
+    error.message ||
+    fallbackMessage
+
+  return {
+    status,
+    message,
+    details,
+  }
+}
+
 async function getAccessToken() {
   const response = await fetch(
     'https://authz.constantcontact.com/oauth2/default/v1/token',
@@ -20,6 +38,9 @@ async function getAccessToken() {
   )
 
   const data = await response.json()
+  if (DEBUG) {
+    console.log('Access Token Response:', JSON.stringify(data, null, 2))
+  }
   return data.access_token
 }
 
@@ -40,7 +61,14 @@ async function checkForContact(email) {
     }
     return { exists: false }
   } catch (e) {
-    throw new Error({ error: e.message })
+    if (DEBUG) {
+      console.error(
+        'Error checking for contact:',
+        JSON.stringify(e.response?.data || e.message, null, 2),
+      )
+    }
+    const routeError = buildRouteError(e, 'Error checking for contact')
+    throw routeError
   }
 }
 
@@ -86,8 +114,14 @@ async function createContact(contact) {
     return response.data
   } catch (e) {
     // V3 provides much better error messages in e.response.data
-    const errorMessage = e.response?.data?.[0]?.error_message || e.message
-    throw new Error(`Constant Contact Error: ${errorMessage}`)
+    const routeError = buildRouteError(e, 'Error creating contact')
+    if (DEBUG) {
+      console.error(
+        'Error creating contact:',
+        JSON.stringify(e.response?.data || e.message, null, 2),
+      )
+    }
+    throw routeError
   }
 }
 
@@ -142,8 +176,14 @@ async function updateContact(previousInfo, newInfo) {
 
     return response.data
   } catch (e) {
-    const errorMsg = e.response?.data?.[0]?.error_message || e.message
-    throw new Error(`Update Failed: ${errorMsg}`)
+    const routeError = buildRouteError(e, 'Error updating contact')
+    if (DEBUG) {
+      console.error(
+        'Error updating contact:',
+        JSON.stringify(e.response?.data || e.message, null, 2),
+      )
+    }
+    throw routeError
   }
 }
 
@@ -181,14 +221,30 @@ previousContact.data structure (from GET):
 */
 
 export default async function handler(req, res) {
-  const contact = req.body.data
-  const previousContact = await checkForContact(contact.email)
-  if (!previousContact.exists) {
-    const newContact = await createContact(contact)
-    res.status(200).json({ data: newContact })
-  } else {
+  try {
+    const contact = req.body.data
+    const previousContact = await checkForContact(contact.email)
+
+    if (!previousContact.exists) {
+      const newContact = await createContact(contact)
+      res.status(200).json({ data: newContact })
+      return
+    }
+
     const previousInfo = previousContact.data.contacts[0] // Adjusted for V3 response structure
     const updatedContact = await updateContact(previousInfo, contact)
     res.status(200).json({ data: updatedContact })
+  } catch (error) {
+    const status = error.status || 500
+    const responseBody = {
+      error: error.message || 'Internal Server Error',
+      details: error.details || null,
+    }
+
+    if (DEBUG) {
+      responseBody.stack = error.stack
+    }
+
+    res.status(status).json(responseBody)
   }
 }
