@@ -152,6 +152,7 @@ async function createContact(contact, accessToken) {
       address: contact.email,
       permission_to_send: 'implicit', // Required: 'implicit', 'explicit', or 'unconfirmed'
     },
+    create_source: 'Contact', // Optional but can be helpful for tracking: Contact | Account | API
     first_name: contact.fName || '',
     last_name: contact.lName || '',
     // V3 uses a flat array of list UUIDs
