@@ -146,7 +146,7 @@ async function checkForContact(email, accessToken) {
 async function createContact(contact, accessToken) {
   const url = 'https://api.cc.email/v3/contacts'
 
-  // 2. V3 uses a different data structure
+  // V3 uses a different data structure
   const data = {
     email_address: {
       address: contact.email,
@@ -195,14 +195,10 @@ async function createContact(contact, accessToken) {
 }
 
 async function updateContact(previousInfo, newInfo, accessToken) {
-  // 1. In V3, the contact object is usually at previousInfo directly
-  // or returned from a GET call.
   const contact = previousInfo
   const contactId = contact.contact_id // UUID format
 
-  // 2. Prepare the update payload
-  // V3 PUT requires the full object, so we spread the existing data
-  // and overwrite only what changed.
+  // Prepare the update payload
   const updatedData = {
     ...contact,
     first_name: newInfo.fName?.length > 0 ? newInfo.fName : contact.first_name,
@@ -210,7 +206,6 @@ async function updateContact(previousInfo, newInfo, accessToken) {
 
     // Add the new list ID to the array if it's not already there
     list_memberships: Array.from(
-      // new Set([...(contact?.list_memberships || []), process.env.LIST_ID]),
       new Set([...(contact.list_memberships || []), process.env.LIST_ID]),
     ),
 
