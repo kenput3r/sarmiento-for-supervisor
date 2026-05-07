@@ -1,95 +1,319 @@
 import axios from 'axios'
 import 'dotenv/config'
 
-const headers = {
-  Authorization: `Bearer ${process.env.TOKEN}`,
-  'Content-Type': 'application/json',
+const DEBUG = true
+
+function assertRequiredEnvVars() {
+  const requiredVars = [
+    'CONSTANT_CONTACT_CLIENT_ID',
+    'CONSTANT_CONTACT_CLIENT_SECRET',
+    'CONSTANT_CONTACT_REFRESH_TOKEN',
+    'LIST_ID',
+  ]
+
+  const missingVars = requiredVars.filter((key) => {
+    const value = process.env[key]
+    return !value || value.trim().length === 0
+  })
+
+  if (missingVars.length > 0) {
+    const error = new Error(
+      `Missing required environment variables: ${missingVars.join(', ')}`,
+    )
+    error.status = 500
+    error.details = {
+      missingEnvVars: missingVars,
+    }
+    throw error
+  }
 }
 
-async function checkForContact(email) {
-  const url = `https://api.constantcontact.com/v2/contacts?api_key=${process.env.API_KEY}&email=${email}`
+function buildRouteError(error, fallbackMessage) {
+  const status = error.response?.status || 500
+  const details = error.response?.data || null
+  const message =
+    error.response?.data?.[0]?.error_message ||
+    error.response?.data?.error_message ||
+    error.message ||
+    fallbackMessage
+
+  return {
+    status,
+    message,
+    details,
+  }
+}
+
+async function getAccessToken() {
+  const response = await fetch(
+    'https://authz.constantcontact.com/oauth2/default/v1/token',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        Authorization: `Basic ${Buffer.from(
+          `${process.env.CONSTANT_CONTACT_CLIENT_ID}:${process.env.CONSTANT_CONTACT_CLIENT_SECRET}`,
+        ).toString('base64')}`,
+      },
+      body: new URLSearchParams({
+        grant_type: 'refresh_token',
+        refresh_token: process.env.CONSTANT_CONTACT_REFRESH_TOKEN,
+      }),
+    },
+  )
+
+  const rawBody = await response.text()
+  let data = null
+
+  if (rawBody) {
+    try {
+      data = JSON.parse(rawBody)
+    } catch {
+      const error = new Error('Token endpoint returned a non-JSON response')
+      error.status = 502
+      error.details = {
+        tokenStatus: response.status,
+        tokenStatusText: response.statusText,
+        tokenContentType: response.headers.get('content-type'),
+        rawBody,
+      }
+      throw error
+    }
+  }
+
+  if (!response.ok) {
+    const error = new Error(
+      data?.error_description ||
+        data?.error ||
+        'Failed to fetch Constant Contact access token',
+    )
+    error.status = response.status
+    error.details = data || {
+      tokenStatus: response.status,
+      tokenStatusText: response.statusText,
+      rawBody,
+    }
+    throw error
+  }
+
+  if (!data?.access_token) {
+    const error = new Error(
+      'Token endpoint response did not include access_token',
+    )
+    error.status = 502
+    error.details = data || {
+      tokenStatus: response.status,
+      tokenStatusText: response.statusText,
+      rawBody,
+    }
+    throw error
+  }
+
+  if (DEBUG) {
+    console.log('Access Token Response:', JSON.stringify(data, null, 2))
+  }
+
+  return data.access_token
+}
+
+async function checkForContact(email, accessToken) {
+  const url = `https://api.cc.email/v3/contacts?email=${encodeURIComponent(email)}`
   try {
     const response = await axios(url, {
       method: 'GET',
-      headers,
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        'Content-Type': 'application/json',
+      },
     })
 
-    if (response.data.results.length > 0) {
+    if (response.data.contacts.length > 0) {
       return { exists: true, data: response.data }
     }
     return { exists: false }
   } catch (e) {
-    throw new Error({ error: e.message })
+    if (DEBUG) {
+      console.error(
+        'Error checking for contact:',
+        JSON.stringify(e.response?.data || e.message, null, 2),
+      )
+    }
+    const routeError = buildRouteError(e, 'Error checking for contact')
+    throw routeError
   }
 }
 
-async function createContact(contact) {
-  const url = `https://api.constantcontact.com/v2/contacts?action_by=ACTION_BY_VISITOR&api_key=${process.env.API_KEY}`
+async function createContact(contact, accessToken) {
+  const url = 'https://api.cc.email/v3/contacts'
+
+  // V3 uses a different data structure
   const data = {
-    lists: [
-      {
-        id: process.env.LIST_ID,
-      },
-    ],
-    cell_phone: contact.phone ? contact.phone : '',
-    confirmed: false,
-    email_addresses: [
-      {
-        email_address: contact.email,
-      },
-    ],
-    first_name: contact.fName ? contact.fName : '',
-    last_name: contact.lName ? contact.lName : '',
+    email_address: {
+      address: contact.email,
+      permission_to_send: 'implicit', // Required: 'implicit', 'explicit', or 'unconfirmed'
+    },
+    create_source: 'Contact', // Optional but can be helpful for tracking: Contact | Account | API
+    first_name: contact.fName || '',
+    last_name: contact.lName || '',
+    // V3 uses a flat array of list UUIDs
+    list_memberships: [process.env.LIST_ID],
+    // Phone must be a string; note that 'cell_phone' is now just 'phone_number'
+    phone_numbers: contact.phone
+      ? [
+          {
+            phone_number: contact.phone,
+            kind: 'mobile',
+          },
+        ]
+      : [],
   }
 
   try {
     const response = await axios({
       url,
       method: 'POST',
-      headers,
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
       data,
     })
 
     return response.data
   } catch (e) {
-    throw new Error(e.message)
+    // V3 provides much better error messages in e.response.data
+    const routeError = buildRouteError(e, 'Error creating contact')
+    if (DEBUG) {
+      console.error(
+        'Error creating contact:',
+        JSON.stringify(e.response?.data || e.message, null, 2),
+      )
+    }
+    throw routeError
   }
 }
 
-async function updateContact(previousInfo, newInfo) {
-  const prevInfo = previousInfo.results[0]
-  const url = `https://api.constantcontact.com/v2/contacts/${prevInfo.id}?action_by=ACTION_BY_VISITOR&api_key=${process.env.API_KEY}`
-  prevInfo.lists.push({ id: process.env.LIST_ID })
-  if (newInfo.fName.length > 0) {
-    prevInfo.first_name = newInfo.fName
+async function updateContact(previousInfo, newInfo, accessToken) {
+  const contact = previousInfo
+  const contactId = contact.contact_id // UUID format
+
+  // Prepare the update payload
+  const updatedData = {
+    ...contact,
+    first_name: newInfo.fName?.length > 0 ? newInfo.fName : contact.first_name,
+    last_name: newInfo.lName?.length > 0 ? newInfo.lName : contact.last_name,
+
+    // Add the new list ID to the array if it's not already there
+    list_memberships: Array.from(
+      new Set([...(contact.list_memberships || []), process.env.LIST_ID]),
+    ),
+
+    // Handle phone numbers (V3 uses an array of objects)
+    phone_numbers: newInfo.phone
+      ? [
+          {
+            phone_number: newInfo.phone,
+            kind: 'mobile',
+          },
+        ]
+      : contact.phone_numbers,
   }
-  if (newInfo.lName.length > 0) {
-    prevInfo.last_name = newInfo.lName
-  }
-  if (newInfo.phone && newInfo.phone.length > 0) {
-    prevInfo.cell_phone = newInfo.phone
-  }
+
+  // 3. Remove read-only fields that V3 will reject if sent back
+  delete updatedData.updated_at
+  delete updatedData.created_at
 
   try {
-    const response = await axios(url, {
+    const response = await axios({
+      url: `https://api.cc.email/v3/contacts/${contactId}`,
       method: 'PUT',
-      headers,
-      data: prevInfo,
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      data: updatedData,
     })
+
     return response.data
   } catch (e) {
-    throw new Error(e.message)
+    const routeError = buildRouteError(e, 'Error updating contact')
+    if (DEBUG) {
+      console.error(
+        'Error updating contact:',
+        JSON.stringify(e.response?.data || e.message, null, 2),
+      )
+    }
+    throw routeError
   }
 }
 
+/*
+Contact object structure for reference:
+- email
+- fName
+- lName
+*/
+
+/*
+previousContact.data structure (from GET):
+{
+  "contacts": [
+    {
+      "contact_id": "6ea4f960-8e75-11ec-aa7d-fa163edfff7e",
+      "email_address": {
+        "address": "joe@example.com",
+        "permission_to_send": "implicit",
+        "created_at": "2022-02-15T15:39:16Z",
+        "updated_at": "2022-02-15T15:39:16Z",
+        "opt_in_source": "Account",
+        "opt_in_date": "2022-02-15T15:39:16Z",
+        "confirm_status": "off"
+      },
+      "first_name": "Joe",
+      "last_name": "Smith",
+      "update_source": "Account",
+      "create_source": "Account",
+      "created_at": "2022-02-15T15:39:16Z",
+      "updated_at": "2022-02-15T15:39:16Z"
+    }
+  ]
+}
+*/
+
 export default async function handler(req, res) {
-  const contact = req.body.data
-  const previousContact = await checkForContact(contact.email)
-  if (!previousContact.exists) {
-    const newContact = await createContact(contact)
-    res.status(200).json({ data: newContact })
-  } else {
-    const updatedContact = await updateContact(previousContact.data, contact)
+  try {
+    assertRequiredEnvVars()
+
+    const accessToken = await getAccessToken()
+    const contact = req.body.data
+    const previousContact = await checkForContact(contact.email, accessToken)
+
+    if (!previousContact.exists) {
+      const newContact = await createContact(contact, accessToken)
+      res.status(200).json({ data: newContact })
+      return
+    }
+
+    const previousInfo = previousContact.data.contacts[0] // Adjusted for V3 response structure
+    const updatedContact = await updateContact(
+      previousInfo,
+      contact,
+      accessToken,
+    )
     res.status(200).json({ data: updatedContact })
+  } catch (error) {
+    const status = error.status || 500
+    const responseBody = {
+      error: error.message || 'Internal Server Error',
+      details: error.details || null,
+    }
+
+    if (DEBUG) {
+      responseBody.stack = error.stack
+    }
+
+    res.status(status).json(responseBody)
   }
 }
